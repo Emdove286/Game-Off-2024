@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bma6ebmohvj8e"]
+
+[ext_resource type="PackedScene" uid="uid://c20qx6b3bc7j7" path="res://Assets/Environment/Props/EyeJar/EyeJar.blend" id="1_240nk"]
+[ext_resource type="PackedScene" uid="uid://cbivvk8p0efab" path="res://Assets/Environment/Props/Desk/Desk.blend" id="2_mrlff"]
+[ext_resource type="PackedScene" uid="uid://c7qiotgq6vxle" path="res://Assets/Environment/Props/Books/BookBlue.blend" id="3_b11b7"]
+[ext_resource type="PackedScene" uid="uid://co3kb4h2raxu7" path="res://Assets/Environment/Props/Books/BookGreen.blend" id="4_tom7b"]
+[ext_resource type="PackedScene" uid="uid://5ls7s1xtbiot" path="res://Assets/Environment/Props/Books/BookGrey.blend" id="5_3vx44"]
+[ext_resource type="PackedScene" uid="uid://j6kotv0e5ybk" path="res://Assets/Environment/Props/Bookshelf/Bookshelf.blend" id="6_c4l8v"]
+
+[node name="PsychOffice" type="Node3D"]
+
+[node name="EyeJar" parent="." instance=ExtResource("1_240nk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.208296, 1.2365, 0.694762)
+
+[node name="Desk" parent="." instance=ExtResource("2_mrlff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34639, 1.09693, 1.09163)
+
+[node name="BookBlue" parent="." instance=ExtResource("3_b11b7")]
+transform = Transform3D(-0.235295, 0, -0.971924, 0, 1, 0, 0.971924, 0, -0.235295, -2.31681, 1.19458, 0.888572)
+
+[node name="BookGreen" parent="." instance=ExtResource("4_tom7b")]
+transform = Transform3D(0.0969228, 0, -0.995292, 0, 1, 0, 0.995292, 0, 0.0969228, -2.3246, 1.2974, 0.869751)
+
+[node name="BookGrey" parent="." instance=ExtResource("5_3vx44")]
+transform = Transform3D(0.153141, 0, 0.988204, 0, 1, 0, -0.988204, 0, 0.153141, -0.239414, 1.19113, 0.830275)
+
+[node name="Bookshelf" parent="." instance=ExtResource("6_c4l8v")]
+transform = Transform3D(-0.999978, 0, -0.00671948, 0, 1, 0, 0.00671948, 0, -0.999978, -0.207173, -2.38419e-07, 5.00935)
+
+[node name="Bookshelf2" parent="." instance=ExtResource("6_c4l8v")]
+transform = Transform3D(-1, 0, 0.000506136, 0, 1, 0, -0.000506136, 0, -1, -2.22169, -2.38419e-07, 5.00142)
+
+[node name="Bookshelf3" parent="." instance=ExtResource("6_c4l8v")]
+transform = Transform3D(-1.74856e-05, 0, 1, 0, 1, 0, -1, 0, -1.74856e-05, -5.10133, -2.38419e-07, 0.36739)
+
+[node name="Bookshelf4" parent="." instance=ExtResource("6_c4l8v")]
+transform = Transform3D(-0.0101751, 0, 0.999948, 0, 1, 0, -0.999948, 0, -0.0101751, -5.0934, -2.38419e-07, 2.38191)
