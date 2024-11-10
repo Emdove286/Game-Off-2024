@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://da6oq224a18tx"]
+
+[ext_resource type="PackedScene" uid="uid://dl4cq5dunouac" path="res://Assets/Place Holder/wall.glb" id="1_cou35"]
+[ext_resource type="PackedScene" uid="uid://c8177ke6gwgbs" path="res://Scenes/player.tscn" id="1_l66k4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k6f64"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r21ar"]
+size = Vector3(60, 2, 60)
+
+[node name="Main" type="Node"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_k6f64")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_r21ar")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 2, 0)
+shadow_enabled = true
+
+[node name="wall2" parent="." instance=ExtResource("1_cou35")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+
+[node name="Engineer" parent="." instance=ExtResource("1_l66k4")]
