@@ -52,5 +52,4 @@ shape = SubResource("BoxShape3D_k6f64")
 mesh = SubResource("BoxMesh_r21ar")
 
 [node name="Spider" parent="NavigationRegion3D" instance=ExtResource("6_0ipkn")]
-transform = Transform3D(0.335002, 0, 5.8437, 0, 5.85329, 0, -5.8437, 0, 0.335002, -0.53148, 0.683973, -18.3075)
-payer_path = NodePath("../../Engineer")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.785206, 0, -19.6891)
