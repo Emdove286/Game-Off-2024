@@ -198,20 +198,20 @@ bones/44/position = Vector3(-0.510844, 0.788312, 0.0597369)
 bones/44/rotation = Quaternion(0.758253, 1.52737e-07, -0.651961, 1.11759e-08)
 
 [node name="Engineer_Shotgun" parent="Rig/Skeleton3D" index="0"]
-transform = Transform3D(0.988701, -0.149894, 5.18473e-07, 5.48512e-08, -4.28334e-07, -0.999999, 0.149895, 0.988701, -7.83182e-07, -0.491061, 0.64103, 0.106595)
+transform = Transform3D(0.988701, -0.149894, -2.68321e-07, -7.79614e-07, -1.2628e-06, -0.999999, 0.149894, 0.988701, -1.6759e-06, -0.49106, 0.64103, 0.106595)
 
 [node name="Engineer_Wrench" parent="Rig/Skeleton3D" index="1"]
-transform = Transform3D(-5.14492e-07, -0.149894, 0.988701, 0.999999, -2.80147e-07, 7.32906e-08, 6.33905e-07, 0.988701, 0.149894, -0.503749, 0.64103, 0.190285)
+transform = Transform3D(2.72302e-07, -0.149894, 0.988701, 0.999999, -1.11461e-06, -7.61174e-07, 1.52663e-06, 0.988701, 0.149894, -0.503748, 0.64103, 0.190285)
 visible = false
 
 [node name="Engineer_Wrench" parent="Rig/Skeleton3D/Engineer_Wrench" index="0"]
 visible = false
 
 [node name="Engineer_Goggles" parent="Rig/Skeleton3D" index="2"]
-transform = Transform3D(0.99972, -1.40143e-09, 0.0236466, 1.39341e-09, 1, 3.55686e-10, -0.0236466, -3.22637e-10, 0.99972, -8.59351e-09, 1.20227, -1.82862e-07)
+transform = Transform3D(0.99972, -1.40145e-09, 0.0236468, 1.39343e-09, 1, 3.55687e-10, -0.0236468, -3.22638e-10, 0.99972, -8.59355e-09, 1.20227, -1.82862e-07)
 
 [node name="Engineer_Backpack" parent="Rig/Skeleton3D" index="3"]
-transform = Transform3D(0.996275, -5.14962e-09, 0.0862353, 5.13043e-09, 1, 4.44077e-10, -0.0862353, 1.88007e-15, 0.996275, -3.04238e-05, 1.20227, 2.44945e-06)
+transform = Transform3D(0.996275, -5.14962e-09, 0.0862354, 5.13044e-09, 1, 4.44078e-10, -0.0862354, 1.46374e-15, 0.996275, -3.04238e-05, 1.20227, 2.44946e-06)
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource("AnimationNodeStateMachine_co30k")
