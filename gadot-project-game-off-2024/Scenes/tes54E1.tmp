@@ -52,7 +52,6 @@ shape = SubResource("BoxShape3D_k6f64")
 mesh = SubResource("BoxMesh_r21ar")
 
 [node name="Spider" parent="NavigationRegion3D" instance=ExtResource("6_0ipkn")]
-transform = Transform3D(-0.0430166, 0, -3.31701, 0, 3.31729, 0, 3.31701, 0, -0.0430166, 1.33155, 1.10374, -20.7809)
+transform = Transform3D(-0.0430166, 0, -3.31701, 0, 3.31729, 0, 3.31701, 0, -0.0430166, 1.33155, 0, -20.7809)
 payer_path = NodePath("../../Engineer")
-speed = 35.0
-jump_speed = 200.0
+jump_speed = 2.0
