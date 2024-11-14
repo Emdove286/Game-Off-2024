@@ -31,5 +31,4 @@ func _physics_process(delta: float) -> void:
 			velocity = Vector3.ZERO
 	else:
 		active_timer.start()
-	
 	move_and_slide()

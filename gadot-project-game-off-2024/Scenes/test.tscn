@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dicxijr6k3h84" path="res://Assets/Place Holder/crate.glb" id="3_oacjw"]
 [ext_resource type="PackedScene" uid="uid://oohxsa7jjftm" path="res://Assets/Place Holder/figurine-large.glb" id="4_scugy"]
 [ext_resource type="PackedScene" uid="uid://c2jo1uxp2vmfw" path="res://Assets/Place Holder/flag.glb" id="5_lw683"]
-[ext_resource type="PackedScene" path="res://Scenes/spider.tscn" id="6_0ipkn"]
+[ext_resource type="PackedScene" uid="uid://bog88f3jtpw73" path="res://Scenes/spider.tscn" id="6_0ipkn"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ylsoi"]
 vertices = PackedVector3Array(0.25, 0.5, -20.5, 0.75, 0.5, -20.5, 0.75, 0.5, -29.5, -29.5, 0.5, -29.5, 0.5, 0.5, -19, -29.5, 0.5, 29.5, 0.5, 0.5, 29.5, 1, 0.5, -19, 29.5, 0.5, -29.5, 29.5, 0.5, 29.5)
@@ -54,5 +54,5 @@ mesh = SubResource("BoxMesh_r21ar")
 [node name="Spider" parent="NavigationRegion3D" instance=ExtResource("6_0ipkn")]
 transform = Transform3D(-0.0430166, 0, -3.31701, 0, 3.31729, 0, 3.31701, 0, -0.0430166, 1.33155, 1.10374, -20.7809)
 payer_path = NodePath("../../Engineer")
-speed = 35.0
+speed = 15.0
 jump_speed = 200.0
