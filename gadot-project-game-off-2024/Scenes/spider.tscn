@@ -275,6 +275,36 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rwmn0")
 
+[sub_resource type="Animation" id="Animation_p0bcn"]
+resource_name = "Jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animal-dog:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.102524, 0), Vector3(0, 0.306404, 0), Vector3(0, 0.737766, 0), Vector3(0, 1.16253, 0), Vector3(0, 1.2005, 0), Vector3(0, 1.20431, 0), Vector3(0, 1.2005, 0), Vector3(0, 1.16253, 0), Vector3(0, 0.737766, 0), Vector3(0, 0.306404, 0), Vector3(0, 0.102524, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1ikd0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animal-dog:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.102524, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_o4yvc"]
 resource_name = "down"
 length = 0.5
@@ -514,36 +544,6 @@ tracks/7/path = NodePath("animal-dog/root/torso")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = PackedFloat32Array(0, 1, 0, 0.1, 0, 0.0333333, 1, 0, 0.117541, 0, 0.0666667, 1, 0, 0.154993, 0, 0.1, 1, 0, 0.1896, 0, 0.133333, 1, 0, 0.198726, 0, 0.166667, 1, 0, 0.174074, 0, 0.2, 1, 0, 0.1352, 0, 0.233333, 1, 0, 0.104859, 0, 0.266667, 1, 0, 0.104859, 0, 0.3, 1, 0, 0.1352, 0, 0.333333, 1, 0, 0.174074, 0, 0.366667, 1, 0, 0.198726, 0, 0.4, 1, 0, 0.1896, 0, 0.433333, 1, 0, 0.154993, 0, 0.5, 1, 0, 0.1, 0)
-
-[sub_resource type="Animation" id="Animation_p0bcn"]
-resource_name = "Jump"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("animal-dog:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0.102524, 0), Vector3(0, 0.306404, 0), Vector3(0, 0.737766, 0), Vector3(0, 1.16253, 0), Vector3(0, 1.2005, 0), Vector3(0, 1.20431, 0), Vector3(0, 1.2005, 0), Vector3(0, 1.16253, 0), Vector3(0, 0.737766, 0), Vector3(0, 0.306404, 0), Vector3(0, 0.102524, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_1ikd0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("animal-dog:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.102524, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_elphj"]
 _data = {
