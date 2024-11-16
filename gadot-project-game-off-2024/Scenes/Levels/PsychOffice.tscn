@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bma6ebmohvj8e"]
+[gd_scene load_steps=16 format=3 uid="uid://bma6ebmohvj8e"]
 
 [ext_resource type="PackedScene" uid="uid://c20qx6b3bc7j7" path="res://Assets/Environment/Props/EyeJar/EyeJar.blend" id="1_240nk"]
 [ext_resource type="PackedScene" uid="uid://cbivvk8p0efab" path="res://Assets/Environment/Props/Desk/Desk.blend" id="2_mrlff"]
@@ -6,23 +6,32 @@
 [ext_resource type="PackedScene" uid="uid://co3kb4h2raxu7" path="res://Assets/Environment/Props/Books/BookGreen.blend" id="4_tom7b"]
 [ext_resource type="PackedScene" uid="uid://5ls7s1xtbiot" path="res://Assets/Environment/Props/Books/BookGrey.blend" id="5_3vx44"]
 [ext_resource type="PackedScene" uid="uid://j6kotv0e5ybk" path="res://Assets/Environment/Props/Bookshelf/Bookshelf.blend" id="6_c4l8v"]
+[ext_resource type="PackedScene" uid="uid://b0n7hl3k5s0iw" path="res://Assets/Environment/Props/Papers/PaperStack.blend" id="7_hvaf0"]
+[ext_resource type="PackedScene" uid="uid://dt6jcha3e4ou6" path="res://Assets/Environment/Props/Papers/PaperPile.blend" id="8_niifb"]
+[ext_resource type="PackedScene" uid="uid://cianxqm4ovmox" path="res://Assets/Environment/Props/Papers/LoosePage.blend" id="9_f6i3b"]
+[ext_resource type="PackedScene" uid="uid://bhvfr1i80h723" path="res://Assets/Environment/Props/WaterCooler/WaterCooler.blend" id="10_x3cj0"]
+[ext_resource type="PackedScene" uid="uid://btirau5s5fqiw" path="res://Assets/Environment/Props/StandingLamp/StandingLamp.blend" id="11_o6i1c"]
+[ext_resource type="PackedScene" uid="uid://ckui3ahmue3ki" path="res://Assets/Environment/Props/Chairs/Deskchair.blend" id="12_7ntph"]
+[ext_resource type="PackedScene" uid="uid://c1ve3ebcgbhtx" path="res://Assets/Environment/Props/Chairs/Armchair.blend" id="13_celwt"]
+[ext_resource type="PackedScene" uid="uid://w1twdamrg4px" path="res://Assets/Environment/Props/Chairs/Loveseat.blend" id="14_wifs7"]
+[ext_resource type="PackedScene" uid="uid://isnrcae37plf" path="res://Assets/Environment/Props/BankersLamp/BankersLamp.blend" id="15_oafqt"]
 
 [node name="PsychOffice" type="Node3D"]
 
 [node name="EyeJar" parent="." instance=ExtResource("1_240nk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.208296, 1.2365, 0.694762)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06271, 1.2365, 0.694762)
 
 [node name="Desk" parent="." instance=ExtResource("2_mrlff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34639, 1.09693, 1.09163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2008, 1.09693, 1.09163)
 
 [node name="BookBlue" parent="." instance=ExtResource("3_b11b7")]
-transform = Transform3D(-0.235295, 0, -0.971924, 0, 1, 0, 0.971924, 0, -0.235295, -2.31681, 1.19458, 0.888572)
+transform = Transform3D(-0.235295, 0, -0.971924, 0, 1, 0, 0.971924, 0, -0.235295, -3.17122, 1.19458, 0.888572)
 
 [node name="BookGreen" parent="." instance=ExtResource("4_tom7b")]
-transform = Transform3D(0.0969228, 0, -0.995292, 0, 1, 0, 0.995292, 0, 0.0969228, -2.3246, 1.2974, 0.869751)
+transform = Transform3D(0.0969228, 0, -0.995292, 0, 1, 0, 0.995292, 0, 0.0969228, -3.17901, 1.2974, 0.869751)
 
 [node name="BookGrey" parent="." instance=ExtResource("5_3vx44")]
-transform = Transform3D(0.153141, 0, 0.988204, 0, 1, 0, -0.988204, 0, 0.153141, -0.239414, 1.19113, 0.830275)
+transform = Transform3D(0.153141, 0, 0.988204, 0, 1, 0, -0.988204, 0, 0.153141, -1.09383, 1.19113, 0.830275)
 
 [node name="Bookshelf" parent="." instance=ExtResource("6_c4l8v")]
 transform = Transform3D(-0.999978, 0, -0.00671948, 0, 1, 0, 0.00671948, 0, -0.999978, -0.207173, -2.38419e-07, 5.00935)
@@ -30,8 +39,41 @@ transform = Transform3D(-0.999978, 0, -0.00671948, 0, 1, 0, 0.00671948, 0, -0.99
 [node name="Bookshelf2" parent="." instance=ExtResource("6_c4l8v")]
 transform = Transform3D(-1, 0, 0.000506136, 0, 1, 0, -0.000506136, 0, -1, -2.22169, -2.38419e-07, 5.00142)
 
+[node name="Bookshelf5" parent="." instance=ExtResource("6_c4l8v")]
+transform = Transform3D(0.999984, 0, 0.00570726, 0, 1, 0, -0.00570726, 0, 0.999984, -2.26871, -2.38419e-07, -3.44179)
+
+[node name="Bookshelf6" parent="." instance=ExtResource("6_c4l8v")]
+transform = Transform3D(0.999999, 0, -0.00151837, 0, 1, 0, 0.00151837, 0, 0.999999, -0.254198, -2.38419e-07, -3.43182)
+
 [node name="Bookshelf3" parent="." instance=ExtResource("6_c4l8v")]
 transform = Transform3D(-1.74856e-05, 0, 1, 0, 1, 0, -1, 0, -1.74856e-05, -5.10133, -2.38419e-07, 0.36739)
 
 [node name="Bookshelf4" parent="." instance=ExtResource("6_c4l8v")]
 transform = Transform3D(-0.0101751, 0, 0.999948, 0, 1, 0, -0.999948, 0, -0.0101751, -5.0934, -2.38419e-07, 2.38191)
+
+[node name="PaperStack2" parent="." instance=ExtResource("7_hvaf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90814, 1.13962, 1.46096)
+
+[node name="PaperPile2" parent="." instance=ExtResource("8_niifb")]
+transform = Transform3D(-0.384972, 0, 0.922928, 0, 1, 0, -0.922928, 0, -0.384972, -1.93166, 1.14645, 1.2498)
+
+[node name="LoosePage" parent="." instance=ExtResource("9_f6i3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20867, 1.14241, 1.73726)
+
+[node name="WaterCooler" parent="." instance=ExtResource("10_x3cj0")]
+transform = Transform3D(-0.999954, 0, -0.00961658, 0, 1, 0, 0.00961658, 0, -0.999954, -3.79724, 0, -3.28401)
+
+[node name="StandingLamp2" parent="." instance=ExtResource("11_o6i1c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.66701, 0, 4.56863)
+
+[node name="Deskchair" parent="." instance=ExtResource("12_7ntph")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1647, 1.09505, 1.0382)
+
+[node name="Armchair2" parent="." instance=ExtResource("13_celwt")]
+transform = Transform3D(-0.982977, 0, -0.183728, 0, 1, 0, 0.183728, 0, -0.982977, -0.23343, 0.819297, -0.13442)
+
+[node name="Loveseat" parent="." instance=ExtResource("14_wifs7")]
+transform = Transform3D(0.915508, 0, -0.402299, 0, 1, 0, 0.402299, 0, 0.915508, -0.371632, 0.813479, -2.18871)
+
+[node name="BankersLamp" parent="." instance=ExtResource("15_oafqt")]
+transform = Transform3D(-0.706465, 0, -0.707748, 0, 1, 0, 0.707748, 0, -0.706465, -1.49821, 1.14437, 1.46573)
