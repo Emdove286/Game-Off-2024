@@ -15,6 +15,12 @@ run/main_scene="res://Scenes/test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[importer_defaults]
+
+texture={
+"compress/mode": 3
+}
+
 [input]
 
 forward={
