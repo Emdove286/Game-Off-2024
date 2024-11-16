@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dn5rr0q3l0px8"
-path="res://.godot/imported/WaterCooler.blend-2297620deb63d72d997af2adbc337af0.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Environment/WaterCooler/WaterCooler.blend"
-dest_files=["res://.godot/imported/WaterCooler.blend-2297620deb63d72d997af2adbc337af0.scn"]
 
 [params]
 

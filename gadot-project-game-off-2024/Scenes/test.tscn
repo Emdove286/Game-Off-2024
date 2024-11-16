@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bog88f3jtpw73" path="res://Scenes/spider.tscn" id="6_0ipkn"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ylsoi"]
-vertices = PackedVector3Array(0.25, 0.5, -20.5, 0.75, 0.5, -20.5, 0.75, 0.5, -29.5, -29.5, 0.5, -29.5, 0.5, 0.5, -19, -29.5, 0.5, 29.5, 0.5, 0.5, 29.5, 1, 0.5, -19, 29.5, 0.5, -29.5, 29.5, 0.5, 29.5)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(0, 4, 3), PackedInt32Array(3, 4, 6), PackedInt32Array(3, 6, 5), PackedInt32Array(1, 2, 7), PackedInt32Array(7, 2, 8), PackedInt32Array(6, 7, 9), PackedInt32Array(9, 7, 8), PackedInt32Array(6, 4, 7)]
+vertices = PackedVector3Array(-29.5, 0.5, -29.5, -29.5, 0.5, 29.5, 29.5, 0.5, 29.5, 29.5, 0.5, -29.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k6f64"]
 size = Vector3(60, 2, 60)
@@ -19,6 +19,10 @@ size = Vector3(60, 2, 60)
 
 [node name="Main" type="Node"]
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.867045, 0.49823, 0, -0.49823, 0.867045, -0.126945, 15.6768, 21.6173)
+fov = 36.5
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 2, 0)
 shadow_enabled = true
@@ -27,6 +31,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
 
 [node name="Engineer" parent="." instance=ExtResource("1_l66k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6605, 0)
 
 [node name="crate2" parent="." instance=ExtResource("3_oacjw")]
 transform = Transform3D(4.61099, 0, 0, 0, 4.61099, 0, 0, 0, 4.61099, -7, 0, 4)
@@ -52,7 +57,7 @@ shape = SubResource("BoxShape3D_k6f64")
 mesh = SubResource("BoxMesh_r21ar")
 
 [node name="Spider" parent="NavigationRegion3D" instance=ExtResource("6_0ipkn")]
-transform = Transform3D(-0.0430166, 0, -3.31701, 0, 3.31729, 0, 3.31701, 0, -0.0430166, 1.33155, 1.10374, -20.7809)
+transform = Transform3D(-0.0430166, 0, -3.31701, 0, 3.31729, 0, 3.31701, 0, -0.0430166, 1.33155, 2.81359, -20.7809)
 payer_path = NodePath("../../Engineer")
 speed = 15.0
 jump_speed = 200.0

@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://co112rga3emxq"
-path="res://.godot/imported/BankersLamp.blend-38c7041163f1277ec8880214429911e1.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Environment/BankersLamp/BankersLamp.blend"
-dest_files=["res://.godot/imported/BankersLamp.blend-38c7041163f1277ec8880214429911e1.scn"]
 
 [params]
 

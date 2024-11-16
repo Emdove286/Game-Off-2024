@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b1kb4e3645rsj"
-path="res://.godot/imported/EyeJar.blend-613aa2e2208920f355d0f502ab5930a8.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Environment/Eyejar/EyeJar.blend"
-dest_files=["res://.godot/imported/EyeJar.blend-613aa2e2208920f355d0f502ab5930a8.scn"]
 
 [params]
 

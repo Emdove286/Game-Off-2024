@@ -5,7 +5,7 @@ var player = null
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var jump_speed = 20.0
 @onready var jump_timer: Timer = $JumpTimer
-@onready var active_timer: Timer = $ActiveTimer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @onready var nav_agent = $NavigationAgent3D
 
@@ -17,18 +17,27 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	velocity.y += -gravity * delta
-	if jump_timer.is_stopped():
-		velocity = Vector3.ZERO
-		nav_agent.set_target_position(player.global_transform.origin)
-		var next_nav_point = nav_agent.get_next_path_position()
-		velocity = (next_nav_point - global_transform.origin).normalized() * speed
-		look_at(player.global_transform.origin)
-		if is_on_floor():
-			velocity.y =+ jump_speed
-		if active_timer.is_stopped():
-			jump_timer.start()
-			velocity = Vector3.ZERO
-	else:
-		active_timer.start()
+	if !is_on_floor():
+		velocity.y += -gravity * delta
 	move_and_slide()
+
+
+func _on_jump_timer_timeout() -> void:
+	print("jumping")
+	animation_player.play("Jump")
+	nav_agent.set_target_position(player.global_transform.origin)
+	var next_nav_point = nav_agent.get_next_path_position()
+	while(animation_player.is_playing()):
+		if nav_agent.distance_to_target()> 1:
+			velocity = (next_nav_point - global_transform.origin).normalized() * speed
+			print("Velocity:", velocity)
+			print("Next Nav Point:", next_nav_point)
+			look_at(player.global_transform.origin)
+			rotation.x = 0
+			rotation.z = 0
+		else:
+			velocity = Vector3.ZERO
+		await get_tree().create_timer(0.1).timeout
+	velocity = Vector3.ZERO
+	jump_timer.start()
+	

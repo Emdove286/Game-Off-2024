@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://blgres2ftg3qx"
-path="res://.godot/imported/PaperPile.blend-01c7c2721bb7518653084816978ccd64.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Environment/Papers/PaperPile.blend"
-dest_files=["res://.godot/imported/PaperPile.blend-01c7c2721bb7518653084816978ccd64.scn"]
 
 [params]
 
