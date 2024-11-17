@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b7d41j1c4002v"
-path="res://.godot/imported/Loveseat.blend-1407b57ae95106c2bc1921572976350b.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Environment/Chairs/Loveseat.blend"
-dest_files=["res://.godot/imported/Loveseat.blend-1407b57ae95106c2bc1921572976350b.scn"]
 
 [params]
 

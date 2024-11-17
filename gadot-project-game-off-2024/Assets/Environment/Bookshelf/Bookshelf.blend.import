@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bk4ab23qyhvdg"
-path="res://.godot/imported/Bookshelf.blend-f75c057dc83ba39d1fdd8631a8b8faf2.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Environment/Bookshelf/Bookshelf.blend"
-dest_files=["res://.godot/imported/Bookshelf.blend-f75c057dc83ba39d1fdd8631a8b8faf2.scn"]
 
 [params]
 

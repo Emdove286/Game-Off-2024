@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://chu2gmii2u5t3"
-path="res://.godot/imported/LoosePage.blend-823e50b4d77339db828916aec203f334.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Environment/Papers/LoosePage.blend"
-dest_files=["res://.godot/imported/LoosePage.blend-823e50b4d77339db828916aec203f334.scn"]
 
 [params]
 

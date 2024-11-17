@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cxllg8r22jvvt"
-path="res://.godot/imported/Desk.blend-081ba878f1e5545cfeb1d49550a1a3e3.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Environment/Desk/Desk.blend"
-dest_files=["res://.godot/imported/Desk.blend-081ba878f1e5545cfeb1d49550a1a3e3.scn"]
 
 [params]
 
