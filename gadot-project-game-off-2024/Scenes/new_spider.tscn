@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1qn7u2gvja8x"]
+
+[ext_resource type="Script" path="res://Scripts/spider.gd" id="1_aq5a6"]
+[ext_resource type="PackedScene" uid="uid://duru3n4ntdr05" path="res://Assets/Characters/Spider/Spider.blend" id="2_3cxoa"]
+
+[sub_resource type="Animation" id="Animation_p0bcn"]
+resource_name = "Jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animal-dog:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.102524, 0), Vector3(0, 0.306404, 0), Vector3(0, 0.737766, 0), Vector3(0, 1.16253, 0), Vector3(0, 1.2005, 0), Vector3(0, 1.20431, 0), Vector3(0, 1.2005, 0), Vector3(0, 1.16253, 0), Vector3(0, 0.737766, 0), Vector3(0, 0.306404, 0), Vector3(0, 0.102524, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1ikd0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animal-dog:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.102524, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_elphj"]
+_data = {
+"Jump": SubResource("Animation_p0bcn"),
+"RESET": SubResource("Animation_1ikd0")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gn7pu"]
+height = 1.86555
+
+[node name="Spider" type="CharacterBody3D"]
+transform = Transform3D(-0.0129674, 0, -0.999916, 0, 1, 0, 0.999916, 0, -0.0129674, 0, 0, 0)
+collision_mask = 6
+script = ExtResource("1_aq5a6")
+
+[node name="animal-dog" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 0, 0.102524, 0)
+
+[node name="Spider2" parent="animal-dog" instance=ExtResource("2_3cxoa")]
+transform = Transform3D(-0.384761, 0, 3.44589e-08, 0, 0.384761, 0, -3.44589e-08, 0, -0.384761, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_elphj")
+}
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.395513, 0, 4.65661e-10, 0, 0.395513, 0, -4.65661e-10, 0, 0.395513, 0, 0.454024, 0)
+shape = SubResource("CapsuleShape3D_gn7pu")
+
+[connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
