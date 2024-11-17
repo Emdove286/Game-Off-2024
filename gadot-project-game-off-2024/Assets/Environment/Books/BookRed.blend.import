@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://pj64ntxdrqfu"
-valid=false
+path="res://.godot/imported/BookRed.blend-e4744ba5a6bc51874cf163f12412b1e3.scn"
 
 [deps]
 
 source_file="res://Assets/Environment/Books/BookRed.blend"
+dest_files=["res://.godot/imported/BookRed.blend-e4744ba5a6bc51874cf163f12412b1e3.scn"]
 
 [params]
 
