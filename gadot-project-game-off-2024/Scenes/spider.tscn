@@ -571,6 +571,7 @@ transform = Transform3D(-0.023141, 0, -0.999732, 0, 1, 0, 0.999732, 0, -0.023141
 
 [node name="torso" type="MeshInstance3D" parent="animal-dog/root"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+visible = false
 mesh = SubResource("ArrayMesh_nwa8s")
 skeleton = NodePath("")
 

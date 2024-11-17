@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://uk7422qyerym"
-valid=false
+path="res://.godot/imported/StandingLamp.blend-f03d810c5a19dfa72221f07640e1a13e.scn"
 
 [deps]
 
 source_file="res://Assets/Environment/StandingLamp/StandingLamp.blend"
+dest_files=["res://.godot/imported/StandingLamp.blend-f03d810c5a19dfa72221f07640e1a13e.scn"]
 
 [params]
 
