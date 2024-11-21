@@ -2,6 +2,7 @@ extends CharacterBody3D
 @export var payer_path :NodePath
 var player = null
 @export var speed = 10.0
+@export var health = 10.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var jump_speed = 20.0
 @onready var jump_timer: Timer = $JumpTimer
@@ -13,12 +14,15 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready() -> void:
 	player = get_node(payer_path)
 	jump_timer.start()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		velocity.y += -gravity * delta
+	if health <= 0:
+		queue_free()
 	move_and_slide()
 
 
@@ -30,8 +34,8 @@ func _on_jump_timer_timeout() -> void:
 	while(animation_player.is_playing()):
 		if nav_agent.distance_to_target()> 1:
 			velocity = (next_nav_point - global_transform.origin).normalized() * speed
-			print("Velocity:", velocity)
-			print("Next Nav Point:", next_nav_point)
+			#print("Velocity:", velocity)
+			#print("Next Nav Point:", next_nav_point)
 			look_at(player.global_transform.origin)
 			rotation.x = 0
 			rotation.z = 0
@@ -41,3 +45,12 @@ func _on_jump_timer_timeout() -> void:
 	velocity = Vector3.ZERO
 	jump_timer.start()
 	
+func hurtSpider(pain:int):
+	print(health)
+	health = health - pain
+	print(health)
+
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	hurtSpider(1)
