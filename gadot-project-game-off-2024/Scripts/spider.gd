@@ -29,10 +29,13 @@ func _physics_process(delta: float) -> void:
 func _on_jump_timer_timeout() -> void:
 	animation_player.play("JumpWindUp")
 	while animation_player.is_playing():
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(0.01).timeout
 	animation_player.play("Jump")
+	while animation_player.is_playing():
+		await get_tree().create_timer(0.01).timeout
 	nav_agent.set_target_position(player.global_transform.origin)
 	var next_nav_point = nav_agent.get_next_path_position()
+	animation_player.play("JumpAir")
 	while(animation_player.is_playing()):
 		if nav_agent.distance_to_target()> 1:
 			velocity = (next_nav_point - global_transform.origin).normalized() * speed
