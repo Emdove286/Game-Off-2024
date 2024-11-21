@@ -27,7 +27,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_jump_timer_timeout() -> void:
-	print("jumping")
+	animation_player.play("JumpWindUp")
+	while animation_player.is_playing():
+		await get_tree().create_timer(0.1).timeout
 	animation_player.play("Jump")
 	nav_agent.set_target_position(player.global_transform.origin)
 	var next_nav_point = nav_agent.get_next_path_position()
@@ -43,12 +45,13 @@ func _on_jump_timer_timeout() -> void:
 			velocity = Vector3.ZERO
 		await get_tree().create_timer(0.1).timeout
 	velocity = Vector3.ZERO
+	animation_player.play("JumpFall")
+	print("timer start")
 	jump_timer.start()
 	
 func hurtSpider(pain:int):
-	print(health)
 	health = health - pain
-	print(health)
+
 
 
 
