@@ -1,0 +1,133 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgpdamp8g5fwk"]
+
+[ext_resource type="PackedScene" uid="uid://bk4ab23qyhvdg" path="res://Assets/Environment/Bookshelf/Bookshelf.blend" id="1_0otfl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1vhdk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eh55r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iulwa"]
+blend_mode = 3
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_eip1u"]
+material = SubResource("StandardMaterial3D_iulwa")
+
+[node name="BookCaseTunnel" type="Node3D"]
+
+[node name="Bookshelf" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Bookshelf2" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+
+[node name="Bookshelf3" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+
+[node name="Bookshelf4" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+
+[node name="Bookshelf5" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
+
+[node name="Bookshelf6" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, 8.74228e-08, 8.74228e-08, -4.37114e-08, 1, 3.82137e-15, 1, 4.37114e-08, 0, 0, -1)
+
+[node name="Bookshelf7" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, 8.74228e-08, 8.74228e-08, -4.37114e-08, 1, 3.82137e-15, 1, 4.37114e-08, -2, 0, -1)
+
+[node name="Bookshelf8" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, 8.74228e-08, 8.74228e-08, -4.37114e-08, 1, 3.82137e-15, 1, 4.37114e-08, -4, 0, -1)
+
+[node name="Bookshelf9" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, 8.74228e-08, 8.74228e-08, -4.37114e-08, 1, 3.82137e-15, 1, 4.37114e-08, 2, 0, -1)
+
+[node name="Bookshelf10" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, 8.74228e-08, 8.74228e-08, -4.37114e-08, 1, 3.82137e-15, 1, 4.37114e-08, 4, -4.76837e-07, -1)
+
+[node name="Bookshelf11" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, 8.74228e-08, 8.74228e-08, -4.37114e-08, 1, 3.82137e-15, 1, 4.37114e-08, 0, 0, 1)
+
+[node name="Bookshelf12" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, 8.74228e-08, 8.74228e-08, -4.37114e-08, 1, 3.82137e-15, 1, 4.37114e-08, -2, 0, 1)
+
+[node name="Bookshelf13" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, 8.74228e-08, 8.74228e-08, -4.37114e-08, 1, 3.82137e-15, 1, 4.37114e-08, -4, 0, 1)
+
+[node name="Bookshelf14" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, 8.74228e-08, 8.74228e-08, -4.37114e-08, 1, 3.82137e-15, 1, 4.37114e-08, 2, 0, 1)
+
+[node name="Bookshelf15" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, 8.74228e-08, 8.74228e-08, -4.37114e-08, 1, 3.82137e-15, 1, 4.37114e-08, 4, -4.76837e-07, 1)
+
+[node name="Bookshelf16" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.82818e-08, 0, 7.33333)
+
+[node name="Bookshelf17" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 0, 7.33333)
+
+[node name="Bookshelf18" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4, 0, 7.33333)
+
+[node name="Bookshelf19" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 0, 7.33333)
+
+[node name="Bookshelf20" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0, 7.33333)
+
+[node name="Bookshelf21" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, 8.74228e-08, -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, 5.82818e-08, 0, 7.33333)
+
+[node name="Bookshelf22" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, 8.74228e-08, -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, 2, 0, 7.33333)
+
+[node name="Bookshelf23" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, 8.74228e-08, -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, 4, 0, 7.33333)
+
+[node name="Bookshelf24" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, 8.74228e-08, -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, -2, 0, 7.33333)
+
+[node name="Bookshelf25" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, 8.74228e-08, -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, -4, -4.76837e-07, 7.33333)
+
+[node name="Bookshelf26" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, 8.74228e-08, -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, -1.16564e-07, 0, 5.33333)
+
+[node name="Bookshelf27" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, 8.74228e-08, -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, 2, 0, 5.33333)
+
+[node name="Bookshelf28" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, 8.74228e-08, -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, 4, 0, 5.33333)
+
+[node name="Bookshelf29" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, 8.74228e-08, -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, -2, 0, 5.33333)
+
+[node name="Bookshelf30" parent="." instance=ExtResource("1_0otfl")]
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, 8.74228e-08, -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, -4, -4.76837e-07, 5.33333)
+
+[node name="Area3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 3.0882, 0, 0, 0, 0.481954, 0, 1, -1)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+shape = SubResource("BoxShape3D_1vhdk")
+
+[node name="Area3D3" type="StaticBody3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 3.0882, 0, 0, 0, 0.481954, 0, 1, 7.30762)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
+shape = SubResource("BoxShape3D_1vhdk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(10.0747, 0, 0, 0, 0.5, 0, 0, 0, 8.70094, 0, 0, 3)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_eh55r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.99974, 0, 0, 0, 1, 0, 0, 0, 3.83422, 0, 0.231825, 3.20429)
+mesh = SubResource("PlaneMesh_eip1u")

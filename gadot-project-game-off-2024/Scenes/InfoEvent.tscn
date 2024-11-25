@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfjpv67le12ay"]
+
+[ext_resource type="Script" path="res://Scripts/info_event.gd" id="1_v8j4r"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k3101"]
+
+[node name="InfoEvent" type="Node3D"]
+script = ExtResource("1_v8j4r")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(2.05046, 0, 0, 0, 0.769643, 0, 0, 0, 2.05046, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_k3101")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
