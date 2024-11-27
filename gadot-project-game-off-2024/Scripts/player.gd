@@ -6,6 +6,7 @@ class_name Player
 @export var jump_speed = 8.0
 @export var rotation_speed = 12.0
 @export var mouse_sensitivity = 0.0015
+@export var health = 100
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var jumping = false
