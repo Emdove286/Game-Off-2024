@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbugksccsjf7a"]
+
+[ext_resource type="Script" path="res://Scripts/dialog_area.gd" id="1_dv2gj"]
+
+[node name="DialogArea" type="Area3D"]
+process_mode = 3
+collision_layer = 0
+script = ExtResource("1_dv2gj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

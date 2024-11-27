@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dnmbcnkn2sxer"]
+[gd_scene load_steps=21 format=3 uid="uid://dnmbcnkn2sxer"]
 
 [ext_resource type="PackedScene" uid="uid://dl4cq5dunouac" path="res://Assets/Place Holder/wall.glb" id="1_wqagg"]
 [ext_resource type="PackedScene" uid="uid://c8177ke6gwgbs" path="res://Scenes/player.tscn" id="2_4utxx"]
@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://beeisqxutnbd2" path="res://Scenes/WorldObjects/Desk.tscn" id="6_b33hu"]
 [ext_resource type="PackedScene" uid="uid://dgpdamp8g5fwk" path="res://Scenes/WorldObjects/BookCaseTunnel.tscn" id="6_irhri"]
 [ext_resource type="PackedScene" uid="uid://dy4txdcxfwst0" path="res://Scenes/spider_2.tscn" id="6_smyfk"]
-[ext_resource type="PackedScene" uid="uid://5haly2mkreqt" path="res://Scenes/HUD.tscn" id="8_8i5mg"]
-[ext_resource type="PackedScene" uid="uid://cfjpv67le12ay" path="res://Scenes/InfoEvent.tscn" id="9_h74lr"]
+[ext_resource type="PackedScene" uid="uid://dbugksccsjf7a" path="res://Scenes/DialogArea.tscn" id="8_br5ym"]
+[ext_resource type="PackedScene" uid="uid://dhxtg07qxtvca" path="res://Scenes/UI/DialoguePlayer.tscn" id="8_chb65"]
 [ext_resource type="PackedScene" uid="uid://dny4nay1ixagg" path="res://Scenes/WorldObjects/Lamp.tscn" id="9_imp1j"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ylsoi"]
@@ -37,6 +37,16 @@ material = SubResource("StandardMaterial3D_8xap8")
 background_mode = 2
 ambient_light_source = 3
 ambient_light_color = Color(0.973535, 0.973535, 0.973535, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rv3hp"]
+size = Vector3(2.97803, 4.50201, 1.33875)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j18wa"]
+radius = 1.57749
+height = 6.8171
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nwore"]
+size = Vector3(5.19458, 5.45313, 1.51355)
 
 [node name="Main" type="Node"]
 
@@ -139,14 +149,38 @@ mesh = SubResource("PlaneMesh_6k1nb")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_eirk8")
 
-[node name="Hud" parent="." instance=ExtResource("8_8i5mg")]
-
-[node name="InfoEvent" parent="." node_paths=PackedStringArray("HUD") instance=ExtResource("9_h74lr")]
-transform = Transform3D(2.14387, 0, 0, 0, 1, 0, 0, 0, 2.34635, 3.33923, 2.18193, -7.09539)
-HUD = NodePath("../Hud")
-
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.153555, 0.98814, 0, -0.98814, -0.153555, 0, 2, 0)
 light_color = Color(1, 0.772947, 0.995478, 1)
 light_energy = 1.393
 shadow_enabled = true
+
+[node name="DialoguePlayer" parent="." instance=ExtResource("8_chb65")]
+scene_text_file = "res://Dialogue/world_dialog.json"
+
+[node name="DialogArea" parent="." instance=ExtResource("8_br5ym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17491, 2.70938, -8.08694)
+dialog_key = "paper"
+
+[node name="CollisionShape3D" parent="DialogArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0295424, -0.339033, 0.285664)
+shape = SubResource("BoxShape3D_rv3hp")
+
+[node name="DialogArea3" parent="." instance=ExtResource("8_br5ym")]
+dialog_key = "lamp"
+
+[node name="CollisionShape3D" parent="DialogArea3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4741, 1.74065, -8.17767)
+shape = SubResource("CapsuleShape3D_j18wa")
+
+[node name="DialogArea2" parent="." instance=ExtResource("8_br5ym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02797, 0.355199, -8.35322)
+dialog_key = "bookcase"
+
+[node name="CollisionShape3D" parent="DialogArea2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.216919, 2.22656, 0.256775)
+shape = SubResource("BoxShape3D_nwore")
+
+[editable path="DialogArea"]
+[editable path="DialogArea3"]
+[editable path="DialogArea2"]
