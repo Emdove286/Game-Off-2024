@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cj8k6x3tq4h8a"]
 
-[ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_4v1f0"]
+[ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_oxh8g"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_pmnib"]
 radius = 0.075
@@ -11,7 +11,7 @@ height = 0.5
 [node name="Projectile" type="RayCast3D"]
 top_level = true
 collision_mask = 0
-script = ExtResource("1_4v1f0")
+script = ExtResource("1_oxh8g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)

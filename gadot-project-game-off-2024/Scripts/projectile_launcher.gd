@@ -1,6 +1,6 @@
 extends Node3D
 
-const PROJECTILE = preload("res://Scenes/projectile.tscn")
+const PROJECTILE = preload("res://Scenes/Character/projectile.tscn")
 
 @onready var timer: Timer = $Timer
 
