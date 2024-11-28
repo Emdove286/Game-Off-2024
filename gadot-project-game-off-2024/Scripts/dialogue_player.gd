@@ -11,6 +11,7 @@ var in_progress: bool = false
 func _ready():
 	scene_text = load_scene_text()
 	SignalBus.connect("display_dialog",  Callable(self, "on_display_dialog"))
+	SignalBus.connect("display_dialog",  Callable(self, "on_display_dialog"))
 	
 func load_scene_text():
 	if FileAccess.file_exists(scene_text_file):
@@ -38,3 +39,4 @@ func finish():
 	text_label.text = ""
 	in_progress = false
 	get_tree().paused = false
+	SignalBus.emit_signal("camera_reset")

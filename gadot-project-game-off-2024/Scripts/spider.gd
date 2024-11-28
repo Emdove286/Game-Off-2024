@@ -50,7 +50,6 @@ func _on_jump_timer_timeout() -> void:
 		await get_tree().create_timer(0.1).timeout
 	velocity = Vector3.ZERO
 	animation_player.play("JumpFall")
-	print("timer start")
 	jump_timer.start()
 	
 func hurtSpider(pain:int):
@@ -65,7 +64,9 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 
 func _on_activator_area_entered(area: Area3D) -> void:
 	active = true
+	print("SPIDER ACTIVATE")
 
 
 func _on_activator_area_exited(area: Area3D) -> void:
 	active = false
+	print("SPIDER DE-ACTIVATE")

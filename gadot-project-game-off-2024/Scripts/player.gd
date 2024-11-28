@@ -15,12 +15,14 @@ var dodge = "Dodge_Backward"
 var last_floor = true
 var notify = false
 
+@onready var camera_3d: Camera3D = $SpringArm3D/Camera3D
 @onready var spring_arm = $SpringArm3D
 @onready var model = $Rig
 @onready var anim_tree = $AnimationTree
 @onready var anim_state = $AnimationTree.get("parameters/playback")
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	SignalBus.connect("camera_reset",  Callable(self, "set_camera"))
 
 func _physics_process(delta):
 	if notify:
@@ -80,3 +82,7 @@ func _on_interaction_area_area_entered(area: Area3D) -> void:
 
 func _on_interaction_area_area_exited(area: Area3D) -> void:
 	notify = false
+
+func set_camera():
+	print("CameraReseting")
+	camera_3d.make_current()
