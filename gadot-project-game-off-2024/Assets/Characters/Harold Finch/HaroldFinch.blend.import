@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dm55n7a1iovp3"
-path="res://.godot/imported/JonahThorne.blend-230aa984ea4176efdc0a50c7ed917faf.scn"
+uid="uid://c5icps7qkkulk"
+path="res://.godot/imported/HaroldFinch.blend-c65811049c5798d1ae5f17a6e07053fb.scn"
 
 [deps]
 
-source_file="res://Assets/Characters/Jonah Thorne/JonahThorne.blend"
-dest_files=["res://.godot/imported/JonahThorne.blend-230aa984ea4176efdc0a50c7ed917faf.scn"]
+source_file="res://Assets/Characters/Harold Finch/HaroldFinch.blend"
+dest_files=["res://.godot/imported/HaroldFinch.blend-c65811049c5798d1ae5f17a6e07053fb.scn"]
 
 [params]
 

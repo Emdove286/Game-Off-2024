@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dy4txdcxfwst0"]
+[gd_scene load_steps=18 format=4 uid="uid://dy4txdcxfwst0"]
 
 [ext_resource type="Script" path="res://Scripts/spider.gd" id="2_bysht"]
 
@@ -1759,6 +1759,9 @@ bind/33/name = &"FrontLegIKPole.R"
 bind/33/bone = -1
 bind/33/pose = Transform3D(0.527953, -0.0388915, 0.848382, -0.283114, 0.933751, 0.218988, -0.800695, -0.355804, 0.481966, -0.0423973, -1.15667, -0.33273)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1scjc"]
+radius = 22.8112
+
 [node name="Spider2" type="CharacterBody3D"]
 collision_mask = 6
 script = ExtResource("2_bysht")
@@ -2033,7 +2036,15 @@ skin = SubResource("Skin_4d7st")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.597587, 0)
 shape = SubResource("CapsuleShape3D_45qey")
 
+[node name="Activator" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Activator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("CylinderShape3D_1scjc")
+
 [connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_shape_entered" from="Area3D" to="." method="_on_area_3d_area_shape_entered"]
 [connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
+[connection signal="area_entered" from="Activator" to="." method="_on_activator_area_entered"]
+[connection signal="area_exited" from="Activator" to="." method="_on_activator_area_exited"]
