@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy8jthitetyve"]
+
+[ext_resource type="PackedScene" uid="uid://s3c0kqxlmphf" path="res://Assets/Environment/Chairs/Deskchair.blend" id="1_3705q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bknck"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Deskchair" parent="." instance=ExtResource("1_3705q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06163, -1.30557)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.762892, 0, 0, 0, 0.827969, 0, 0, 0, 0.574718, 0, 0.434047, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_bknck")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7xma0sblt0xj"]
+
+[ext_resource type="PackedScene" uid="uid://b4rau2q6u0md0" path="res://Assets/Environment/Chairs/Armchair.blend" id="1_bbi4a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bknck"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Armchair2" parent="." instance=ExtResource("1_bbi4a")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1.16527, 0, 0, 0, 0.910224, 0, 0, 0, 1.12745, 0, -0.201284, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_bknck")

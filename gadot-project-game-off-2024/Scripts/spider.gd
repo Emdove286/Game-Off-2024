@@ -7,7 +7,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var jump_speed = 20.0
 @onready var jump_timer: Timer = $JumpTimer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
+var active = false
 @onready var nav_agent = $NavigationAgent3D
 
 # Called when the node enters the scene tree for the first time.
@@ -23,7 +23,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y += -gravity * delta
 	if health <= 0:
 		queue_free()
-	move_and_slide()
+	if active:
+		move_and_slide()
 
 
 func _on_jump_timer_timeout() -> void:
@@ -49,7 +50,6 @@ func _on_jump_timer_timeout() -> void:
 		await get_tree().create_timer(0.1).timeout
 	velocity = Vector3.ZERO
 	animation_player.play("JumpFall")
-	print("timer start")
 	jump_timer.start()
 	
 func hurtSpider(pain:int):
@@ -60,3 +60,13 @@ func hurtSpider(pain:int):
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	hurtSpider(1)
+
+
+func _on_activator_area_entered(area: Area3D) -> void:
+	active = true
+	print("SPIDER ACTIVATE")
+
+
+func _on_activator_area_exited(area: Area3D) -> void:
+	active = false
+	print("SPIDER DE-ACTIVATE")

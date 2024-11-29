@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://da6oq224a18tx"]
 
-[ext_resource type="PackedScene" uid="uid://dl4cq5dunouac" path="res://Assets/Place Holder/wall.glb" id="1_cou35"]
-[ext_resource type="PackedScene" uid="uid://c8177ke6gwgbs" path="res://Scenes/player.tscn" id="1_l66k4"]
-[ext_resource type="PackedScene" uid="uid://dicxijr6k3h84" path="res://Assets/Place Holder/crate.glb" id="3_oacjw"]
-[ext_resource type="PackedScene" uid="uid://oohxsa7jjftm" path="res://Assets/Place Holder/figurine-large.glb" id="4_scugy"]
-[ext_resource type="PackedScene" uid="uid://c2jo1uxp2vmfw" path="res://Assets/Place Holder/flag.glb" id="5_lw683"]
-[ext_resource type="PackedScene" uid="uid://dy4txdcxfwst0" path="res://Scenes/spider_2.tscn" id="7_c052k"]
+[ext_resource type="PackedScene" uid="uid://dl4cq5dunouac" path="res://Assets/Place Holder/wall.glb" id="1_mihbr"]
+[ext_resource type="PackedScene" uid="uid://c8177ke6gwgbs" path="res://Scenes/Character/player.tscn" id="2_gl45t"]
+[ext_resource type="PackedScene" uid="uid://dicxijr6k3h84" path="res://Assets/Place Holder/crate.glb" id="3_a24ge"]
+[ext_resource type="PackedScene" uid="uid://oohxsa7jjftm" path="res://Assets/Place Holder/figurine-large.glb" id="4_ay0k6"]
+[ext_resource type="PackedScene" uid="uid://c2jo1uxp2vmfw" path="res://Assets/Place Holder/flag.glb" id="5_qq6g8"]
+[ext_resource type="PackedScene" uid="uid://dy4txdcxfwst0" path="res://Scenes/Character/spider_2.tscn" id="6_6qb2i"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ylsoi"]
 vertices = PackedVector3Array(-29.5, 0.5, -29.5, -29.5, 0.5, 29.5, 29.5, 0.5, 29.5, 29.5, 0.5, -29.5)
@@ -27,19 +27,19 @@ fov = 36.5
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 2, 0)
 shadow_enabled = true
 
-[node name="wall2" parent="." instance=ExtResource("1_cou35")]
+[node name="wall2" parent="." instance=ExtResource("1_mihbr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
 
-[node name="Engineer" parent="." instance=ExtResource("1_l66k4")]
+[node name="Engineer" parent="." instance=ExtResource("2_gl45t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6605, 0)
 
-[node name="crate2" parent="." instance=ExtResource("3_oacjw")]
+[node name="crate2" parent="." instance=ExtResource("3_a24ge")]
 transform = Transform3D(4.61099, 0, 0, 0, 4.61099, 0, 0, 0, 4.61099, -7, 0, 4)
 
-[node name="figurine-large" parent="." instance=ExtResource("4_scugy")]
+[node name="figurine-large" parent="." instance=ExtResource("4_ay0k6")]
 transform = Transform3D(5.07781, 0, 0, 0, 5.07781, 0, 0, 0, 5.07781, 14.3083, 0, -5.70796)
 
-[node name="flag2" parent="." instance=ExtResource("5_lw683")]
+[node name="flag2" parent="." instance=ExtResource("5_qq6g8")]
 transform = Transform3D(6.06302, 0, 0, 0, 6.06302, 0, 0, 0, 6.06302, -18.5993, -0.790007, 8.36282)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
@@ -56,6 +56,6 @@ shape = SubResource("BoxShape3D_k6f64")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Ground"]
 mesh = SubResource("BoxMesh_r21ar")
 
-[node name="Spider3" parent="." instance=ExtResource("7_c052k")]
+[node name="Spider3" parent="." instance=ExtResource("6_6qb2i")]
 transform = Transform3D(2.8245, 0, 0, 0, 2.8245, 0, 0, 0, 2.8245, 4.03739, 2.45909, -17.8441)
 payer_path = NodePath("../Engineer")
