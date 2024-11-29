@@ -18,6 +18,12 @@
 	"deadend": [
 		"Looks like this is a dead end"
 	],
+	"watercooler": [
+		"Looks like this is a dead end",
+		"but atleast there is a water cooler here, I am parched",
+		"...",
+		"I am not entirely sure this is water"
+	],
 	"mabelcrenshaw": [
 		"Detective Thorne: (taking a cautious step into the room, scanning his surroundings) Hello? I’m… looking for someone. I don’t know if you can help me, but I need information about Dr. Finch. Who are you?",
 		"Mabel Crenshaw: (without looking up from her knitting, smiling warmly)
