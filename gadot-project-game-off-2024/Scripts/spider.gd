@@ -8,7 +8,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var jump_timer: Timer = $JumpTimer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 var active = false
+var knockback = false
 @onready var nav_agent = $NavigationAgent3D
+@onready var knockbackTime: Timer = $knockback
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,6 +29,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 
+
 func _on_jump_timer_timeout() -> void:
 	animation_player.play("JumpWindUp")
 	while animation_player.is_playing():
@@ -39,9 +42,10 @@ func _on_jump_timer_timeout() -> void:
 	animation_player.play("JumpAir")
 	while(animation_player.is_playing()):
 		if nav_agent.distance_to_target()> 1:
-			velocity = (next_nav_point - global_transform.origin).normalized() * speed
-			#print("Velocity:", velocity)
-			#print("Next Nav Point:", next_nav_point)
+			if knockbackTime.is_stopped():
+				velocity = (next_nav_point - global_transform.origin).normalized() * speed
+			else:
+				velocity = ((next_nav_point - global_transform.origin).normalized() * speed) * -1
 			look_at(player.global_transform.origin)
 			rotation.x = 0
 			rotation.z = 0
@@ -62,6 +66,7 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 	hurtSpider(1)
 
 
+
 func _on_activator_area_entered(area: Area3D) -> void:
 	active = true
 	print("SPIDER ACTIVATE")
@@ -70,3 +75,12 @@ func _on_activator_area_entered(area: Area3D) -> void:
 func _on_activator_area_exited(area: Area3D) -> void:
 	active = false
 	print("SPIDER DE-ACTIVATE")
+
+
+func _on_hit_box_area_entered(area: Area3D) -> void:
+	knockback = true
+	knockbackTime.start()
+
+
+func _on_hit_box_area_exited(area: Area3D) -> void:
+	pass # Replace with function body.

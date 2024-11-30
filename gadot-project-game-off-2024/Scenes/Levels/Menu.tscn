@@ -1,0 +1,279 @@
+[gd_scene load_steps=18 format=3 uid="uid://c6linmkffmwj"]
+
+[ext_resource type="PackedScene" uid="uid://beeisqxutnbd2" path="res://Scenes/WorldObjects/Desk.tscn" id="1_ncadw"]
+[ext_resource type="PackedScene" uid="uid://dl4cq5dunouac" path="res://Assets/Place Holder/wall.glb" id="2_gbp3f"]
+[ext_resource type="PackedScene" uid="uid://dy8jthitetyve" path="res://Scenes/WorldObjects/Desk Chair.tscn" id="3_6tot3"]
+[ext_resource type="PackedScene" uid="uid://c7xma0sblt0xj" path="res://Scenes/WorldObjects/ArmChair.tscn" id="4_dl4p0"]
+[ext_resource type="PackedScene" uid="uid://btosalb16kk6" path="res://Scenes/WorldObjects/LoveSeat.tscn" id="5_fhq6d"]
+[ext_resource type="PackedScene" uid="uid://kyrr4sxk18mk" path="res://Scenes/WorldObjects/BookCase.tscn" id="6_kapbb"]
+[ext_resource type="PackedScene" uid="uid://dny4nay1ixagg" path="res://Scenes/WorldObjects/Lamp.tscn" id="7_jyh60"]
+[ext_resource type="PackedScene" uid="uid://c5icps7qkkulk" path="res://Assets/Characters/Harold Finch/HaroldFinch.blend" id="8_lpsx8"]
+[ext_resource type="PackedScene" uid="uid://b4ag3qfkxs3to" path="res://Scenes/UI/MenuOverlay.tscn" id="9_40h0h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nynss"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exejh"]
+albedo_color = Color(0.617681, 0.439515, 0.363338, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_750d8"]
+material = SubResource("StandardMaterial3D_exejh")
+size = Vector3(60, 2, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xap8"]
+albedo_color = Color(0.912885, 0, 0.0851348, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_whf31"]
+material = SubResource("StandardMaterial3D_8xap8")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iyqey"]
+size = Vector3(0.151611, 1.00659, 0.999084)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dn86m"]
+albedo_color = Color(0.658753, 0, 0.013535, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qcp1p"]
+material = SubResource("StandardMaterial3D_dn86m")
+top_radius = 0.0
+bottom_radius = 0.05
+height = 0.001
+
+[node name="Menu" type="Node"]
+
+[node name="OfficeHub" type="Node" parent="."]
+
+[node name="Ground" type="StaticBody3D" parent="OfficeHub"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -1, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeHub/Ground"]
+shape = SubResource("BoxShape3D_nynss")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="OfficeHub/Ground"]
+mesh = SubResource("BoxMesh_750d8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="OfficeHub"]
+transform = Transform3D(6.29335, 0, 0, 0, 1.33848, 0, 0, 0, 7.00813, -0.232464, -0.643316, -0.00650191)
+mesh = SubResource("PlaneMesh_whf31")
+skeleton = NodePath("../../..")
+
+[node name="Desk" parent="OfficeHub" instance=ExtResource("1_ncadw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.575669, -0.7, 0.214871)
+
+[node name="wall6" parent="OfficeHub" instance=ExtResource("2_gbp3f")]
+transform = Transform3D(0.776748, 0, -7.96543e-13, 0, 4.78408, 0, -8.93527e-15, 0, 8.18752, 8.84426, -1.0041, 4.98859)
+
+[node name="Area3D" type="StaticBody3D" parent="OfficeHub/wall6"]
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeHub/wall6/Area3D"]
+transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, 0, 0, 0.999969, -0.03157, 0.505725, 0.000581376)
+shape = SubResource("BoxShape3D_iyqey")
+
+[node name="DeskChair" parent="OfficeHub" instance=ExtResource("3_6tot3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.230944, -0.69253, 0.783548)
+
+[node name="Chair1" parent="OfficeHub" instance=ExtResource("4_dl4p0")]
+transform = Transform3D(0.300206, 0, -0.953874, 0, 1, 0, 0.953874, 0, 0.300206, -2.31554, 0.112227, -6.22541)
+
+[node name="Chair2" parent="OfficeHub" instance=ExtResource("4_dl4p0")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -3.35573, 0.185667, -3.02218)
+
+[node name="LoveSeat" parent="OfficeHub" instance=ExtResource("5_fhq6d")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -5.94896, -0.7, -6.00493)
+
+[node name="wall7" parent="OfficeHub" instance=ExtResource("2_gbp3f")]
+transform = Transform3D(0.776748, 0, -7.96543e-13, 0, 4.78408, 0, -8.93527e-15, 0, 8.18752, -8.96502, -0.932462, -4.93674)
+
+[node name="Area3D" type="StaticBody3D" parent="OfficeHub/wall7"]
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeHub/wall7/Area3D"]
+transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, 0, 0, 0.999969, -0.03157, 0.505725, 0.000581376)
+shape = SubResource("BoxShape3D_iyqey")
+
+[node name="wall8" parent="OfficeHub" instance=ExtResource("2_gbp3f")]
+transform = Transform3D(-3.39527e-08, 0, 8.18752, 0, 4.78408, 0, -0.776748, 0, -3.57887e-07, -5.15574, -1.0041, -9.01141)
+
+[node name="Area3D" type="StaticBody3D" parent="OfficeHub/wall8"]
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeHub/wall8/Area3D"]
+transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, 0, 0, 0.999969, -0.03157, 0.505725, 0.000581376)
+shape = SubResource("BoxShape3D_iyqey")
+
+[node name="BookCase3" parent="OfficeHub" instance=ExtResource("6_kapbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.35136, -0.687019, -8.61871)
+
+[node name="BookCase4" parent="OfficeHub" instance=ExtResource("6_kapbb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.47459, -0.687019, -7.38431)
+
+[node name="BookCase5" parent="OfficeHub" instance=ExtResource("6_kapbb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.47459, -0.687019, -5.38431)
+
+[node name="BookCase6" parent="OfficeHub" instance=ExtResource("6_kapbb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.47459, -0.687019, -3.38431)
+
+[node name="BookCase7" parent="OfficeHub" instance=ExtResource("6_kapbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.35136, -0.687019, -8.61871)
+
+[node name="BookCase8" parent="OfficeHub" instance=ExtResource("6_kapbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.35136, -0.687019, -8.61871)
+
+[node name="wall9" parent="OfficeHub" instance=ExtResource("2_gbp3f")]
+transform = Transform3D(-3.39527e-08, 0, 8.18752, 0, 4.78408, 0, -0.776748, 0, -3.57887e-07, 4.84426, -1.0041, -9.01141)
+
+[node name="Area3D" type="StaticBody3D" parent="OfficeHub/wall9"]
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeHub/wall9/Area3D"]
+transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, 0, 0, 0.999969, -0.03157, 0.505725, 0.000581376)
+shape = SubResource("BoxShape3D_iyqey")
+
+[node name="wall10" parent="OfficeHub" instance=ExtResource("2_gbp3f")]
+transform = Transform3D(-3.39527e-08, 0, 8.18752, 0, 4.78408, 0, -0.776748, 0, -3.57887e-07, 4.84426, -1.0041, 8.98859)
+
+[node name="Area3D" type="StaticBody3D" parent="OfficeHub/wall10"]
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeHub/wall10/Area3D"]
+transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, 0, 0, 0.999969, -0.03157, 0.505725, 0.000581376)
+shape = SubResource("BoxShape3D_iyqey")
+
+[node name="wall11" parent="OfficeHub" instance=ExtResource("2_gbp3f")]
+transform = Transform3D(-3.39527e-08, 0, 8.18752, 0, 4.78408, 0, -0.776748, 0, -3.57887e-07, -5.15574, -1.0041, 8.98859)
+
+[node name="Area3D" type="StaticBody3D" parent="OfficeHub/wall11"]
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeHub/wall11/Area3D"]
+transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, 0, 0, 0.999969, -0.03157, 0.505725, 0.000581376)
+shape = SubResource("BoxShape3D_iyqey")
+
+[node name="wall12" parent="OfficeHub" instance=ExtResource("2_gbp3f")]
+transform = Transform3D(-0.776748, 0, -7.15775e-07, 0, 4.78408, 0, 6.79055e-08, 0, -8.18752, 8.84426, -1.0041, -5.01141)
+
+[node name="Area3D" type="StaticBody3D" parent="OfficeHub/wall12"]
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeHub/wall12/Area3D"]
+transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, 0, 0, 0.999969, -0.03157, 0.505725, 0.000581376)
+shape = SubResource("BoxShape3D_iyqey")
+
+[node name="wall13" parent="OfficeHub" instance=ExtResource("2_gbp3f")]
+transform = Transform3D(0.776748, 0, -7.96543e-13, 0, 4.78408, 0, -8.93527e-15, 0, 8.18752, -8.94555, -1.0041, 4.98859)
+
+[node name="Area3D" type="StaticBody3D" parent="OfficeHub/wall13"]
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeHub/wall13/Area3D"]
+transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, 0, 0, 0.999969, -0.03157, 0.505725, 0.000581376)
+shape = SubResource("BoxShape3D_iyqey")
+
+[node name="BookCase9" parent="OfficeHub" instance=ExtResource("6_kapbb")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.30412, -0.687019, 8.61569)
+
+[node name="BookCase10" parent="OfficeHub" instance=ExtResource("6_kapbb")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 8.42734, -0.687019, 7.38129)
+
+[node name="BookCase11" parent="OfficeHub" instance=ExtResource("6_kapbb")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 8.42734, -0.687019, 5.38129)
+
+[node name="BookCase12" parent="OfficeHub" instance=ExtResource("6_kapbb")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 8.42734, -0.687019, 3.38129)
+
+[node name="BookCase13" parent="OfficeHub" instance=ExtResource("6_kapbb")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.30412, -0.687019, 8.61569)
+
+[node name="BookCase14" parent="OfficeHub" instance=ExtResource("6_kapbb")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.30412, -0.687019, 8.61569)
+
+[node name="Lamp" parent="OfficeHub" instance=ExtResource("7_jyh60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.65144, -0.7, -4.65229)
+
+[node name="wall14" parent="OfficeHub" instance=ExtResource("2_gbp3f")]
+transform = Transform3D(-3.39527e-08, 0, 8.18752, 0, 1.91363, 0, -0.776748, 0, -3.57887e-07, -1.15574, 1.89666, 8.98859)
+
+[node name="Area3D" type="StaticBody3D" parent="OfficeHub/wall14"]
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeHub/wall14/Area3D"]
+transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, 0, 0, 0.999969, -0.03157, 0.505725, 0.000581376)
+shape = SubResource("BoxShape3D_iyqey")
+
+[node name="wall15" parent="OfficeHub" instance=ExtResource("2_gbp3f")]
+transform = Transform3D(-3.39527e-08, 0, 8.18752, 0, 1.91363, 0, -0.776748, 0, -3.57887e-07, -1.15574, 1.89666, -9.01141)
+
+[node name="Area3D" type="StaticBody3D" parent="OfficeHub/wall15"]
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeHub/wall15/Area3D"]
+transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, 0, 0, 0.999969, -0.03157, 0.505725, 0.000581376)
+shape = SubResource("BoxShape3D_iyqey")
+
+[node name="wall16" parent="OfficeHub" instance=ExtResource("2_gbp3f")]
+transform = Transform3D(-0.776748, 0, -7.15775e-07, 0, 1.91363, 0, 6.79055e-08, 0, -8.18752, -8.94739, 1.89666, -0.427117)
+
+[node name="Area3D" type="StaticBody3D" parent="OfficeHub/wall16"]
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeHub/wall16/Area3D"]
+transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, 0, 0, 0.999969, -0.03157, 0.505725, 0.000581376)
+shape = SubResource("BoxShape3D_iyqey")
+
+[node name="wall17" parent="OfficeHub" instance=ExtResource("2_gbp3f")]
+transform = Transform3D(0.776748, 0, -8.81073e-13, 0, 1.91363, 0, 3.55271e-14, 0, 8.18752, 8.84426, 1.89666, -0.0114098)
+
+[node name="Area3D" type="StaticBody3D" parent="OfficeHub/wall17"]
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeHub/wall17/Area3D"]
+transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, 0, 0, 0.999969, -0.03157, 0.505725, 0.000581376)
+shape = SubResource("BoxShape3D_iyqey")
+
+[node name="HaroldFinch" parent="OfficeHub" instance=ExtResource("8_lpsx8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.276464, -0.899958, 0.749825)
+
+[node name="Skeleton3D" parent="OfficeHub/HaroldFinch/Armature" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0269246, -0.0286727, -0.00726449)
+bones/2/rotation = Quaternion(0.00547497, 0.00647497, -0.126525, 0.970475)
+bones/3/rotation = Quaternion(-0.00952503, 0.000474975, 0.073475, 0.988475)
+bones/4/rotation = Quaternion(-0.050525, -0.033525, -0.462525, 0.933475)
+bones/5/rotation = Quaternion(0.000474975, 0.050475, -0.016525, 0.993475)
+bones/14/rotation = Quaternion(0.414475, 0.748475, -4.07553, 5.08848)
+bones/15/rotation = Quaternion(-0.180525, 0.905475, 0.237475, 0.998475)
+bones/30/rotation = Quaternion(-0.675525, -0.807525, -0.468525, 0.506475)
+bones/31/rotation = Quaternion(0.929475, 0.952475, 0.462475, 2.93448)
+bones/46/rotation = Quaternion(-0.487525, -1.72053, -0.088525, 1.58248)
+bones/47/rotation = Quaternion(0.053475, -0.023525, 0.968475, 0.989475)
+bones/49/rotation = Quaternion(-0.360525, -0.507525, 0.718475, -0.272525)
+bones/53/rotation = Quaternion(0.034475, -7.24253, 1.08748, 7.39048)
+bones/54/rotation = Quaternion(-0.046525, -0.00252503, 0.756475, 0.989475)
+bones/60/position = Vector3(-0.024525, 0.587475, 1.22248)
+bones/61/rotation = Quaternion(-0.707525, 0.000474975, -0.169525, 0.707475)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.19038, 0, 0, 0, 1, 0, 0, 0, 4.59103, 0.22378, 0.352283, 0.00893718)
+mesh = SubResource("CylinderMesh_qcp1p")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.492424, -0.26751, 0.828226, 0, 0.951594, 0.307357, -0.870356, -0.15135, 0.468588, 2.78289, 1.27302, 0.882661)
+fov = 33.3
+
+[node name="Menu" parent="Camera3D" instance=ExtResource("9_40h0h")]
+
+[editable path="OfficeHub/wall9"]
+[editable path="OfficeHub/HaroldFinch"]

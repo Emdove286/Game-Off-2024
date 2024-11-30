@@ -10,14 +10,16 @@ config_version=5
 
 [application]
 
-config/name="Gadot Project Game Off 2024"
-run/main_scene="res://Scenes/Levels/test.tscn"
+config/name="Godot Project Game Off 2024"
+run/main_scene="res://Scenes/Levels/Menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+run/name="Gadot Project Game Off 2024"
 
 [autoload]
 
 SignalBus="*res://Scripts/SignalBus.gd"
+GameLogic="*res://Scripts/GameLogic.gd"
 
 [importer_defaults]
 
@@ -83,4 +85,5 @@ interact={
 3d_physics/layer_1="player"
 3d_physics/layer_2="enemies"
 3d_physics/layer_3="world"
+3d_physics/layer_4="Hurt"
 3d_physics/layer_9="Dialogue"

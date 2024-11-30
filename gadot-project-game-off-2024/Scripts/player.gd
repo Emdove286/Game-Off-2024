@@ -23,6 +23,7 @@ var notify = false
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	SignalBus.connect("camera_reset",  Callable(self, "set_camera"))
+	
 
 func _physics_process(delta):
 	if notify:
@@ -83,6 +84,11 @@ func _on_interaction_area_area_entered(area: Area3D) -> void:
 func _on_interaction_area_area_exited(area: Area3D) -> void:
 	notify = false
 
-func set_camera():
-	print("CameraReseting")
-	camera_3d.make_current()
+#func set_camera():
+	#print("CameraReseting")
+	#camera_3d.make_current()
+
+
+func _on_hurt_box_area_entered(area: Area3D) -> void:
+	health = health - 10
+	print("ouch")

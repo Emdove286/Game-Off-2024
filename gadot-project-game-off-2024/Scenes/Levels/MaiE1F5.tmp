@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://4y1asepouvr1"]
+[gd_scene load_steps=35 format=3 uid="uid://4y1asepouvr1"]
 
 [ext_resource type="PackedScene" uid="uid://beeisqxutnbd2" path="res://Scenes/WorldObjects/Desk.tscn" id="1_8qlp6"]
 [ext_resource type="PackedScene" uid="uid://dl4cq5dunouac" path="res://Assets/Place Holder/wall.glb" id="2_kvnpu"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://wshjgu2o4tlt" path="res://Scenes/WorldObjects/Watercooler.tscn" id="8_mqoij"]
 [ext_resource type="PackedScene" uid="uid://dgpdamp8g5fwk" path="res://Scenes/WorldObjects/BookCaseTunnel.tscn" id="8_qi457"]
 [ext_resource type="PackedScene" uid="uid://dy4txdcxfwst0" path="res://Scenes/Character/spider_2.tscn" id="10_oo8hh"]
-[ext_resource type="PackedScene" uid="uid://d4jrel06ycl2f" path="res://Assets/Characters/Arnold/Arnold.blend" id="12_hfdr0"]
+[ext_resource type="PackedScene" uid="uid://disjd6jd5cjou" path="res://Scenes/CutsceneArea.tscn" id="11_v6oj3"]
 [ext_resource type="PackedScene" uid="uid://dhxtg07qxtvca" path="res://Scenes/UI/DialoguePlayer.tscn" id="12_ulwsk"]
 [ext_resource type="PackedScene" uid="uid://c8177ke6gwgbs" path="res://Scenes/Character/player.tscn" id="12_uylaq"]
 [ext_resource type="PackedScene" uid="uid://dbugksccsjf7a" path="res://Scenes/DialogArea.tscn" id="13_sj5wc"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://5haly2mkreqt" path="res://Scenes/UI/HUD.tscn" id="15_dl26h"]
 [ext_resource type="PackedScene" uid="uid://dq4smcs1usvxe" path="res://Assets/Characters/Captain Justice/CaptainJustice.blend" id="18_h626c"]
 [ext_resource type="Script" path="res://Scenes/Levels/Door.gd" id="19_khadt"]
-[ext_resource type="AudioStream" uid="uid://bo3paqal0jp3g" path="res://Assets/Music/JDSherbert - Ambiences Music Pack - Underwater City.mp3" id="19_u7213"]
 
 [sub_resource type="Environment" id="Environment_dkacm"]
 
@@ -44,7 +43,7 @@ albedo_color = Color(0.912885, 0, 0.0851348, 1)
 material = SubResource("StandardMaterial3D_llj60")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_onuam"]
-size = Vector3(0.183815, 1.02676, 0.996681)
+size = Vector3(0.151611, 1.00659, 0.999084)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_towo3"]
 size = Vector3(3.53137, 1, 2.37097)
@@ -53,8 +52,9 @@ size = Vector3(3.53137, 1, 2.37097)
 height = 5.09434
 radius = 3.35492
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_eaigo"]
-radius = 2.3901
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_j3onq"]
+height = 3.74714
+radius = 3.08201
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18qty"]
 albedo_color = Color(1, 0.506744, 0.396204, 1)
@@ -279,17 +279,6 @@ collision_mask = 255
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/OfficeHub/wall17/Area3D"]
 transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, 0, 0, 0.999969, -0.03157, 0.505725, 0.000581376)
-shape = SubResource("BoxShape3D_onuam")
-
-[node name="wall18" parent="NavigationRegion3D/OfficeHub" instance=ExtResource("2_kvnpu")]
-transform = Transform3D(-3.39527e-08, 0, 8.18752, 0, 4.78408, 0, -0.776748, 0, -3.57887e-07, -0.86859, -1.0041, 8.96622)
-
-[node name="Area3D" type="StaticBody3D" parent="NavigationRegion3D/OfficeHub/wall18"]
-collision_layer = 255
-collision_mask = 255
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/OfficeHub/wall18/Area3D"]
-transform = Transform3D(1, 0, 3.49587e-12, 0, 1, 0, -3.9968e-15, 0, 0.999969, -0.0315695, 0.505725, 0.000581376)
 shape = SubResource("BoxShape3D_onuam")
 
 [node name="OfficeMabel" type="Node3D" parent="NavigationRegion3D"]
@@ -2051,55 +2040,100 @@ dialog_key = "watercooler"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.460487, 0, 0.014164)
 shape = SubResource("CylinderShape3D_evmeb")
 
-[node name="Doctors Desk" parent="Dialogue Areas" instance=ExtResource("13_sj5wc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.733579, 0.172852, -0.427246)
+[node name="DoctorsDeskDia" parent="Dialogue Areas" instance=ExtResource("13_sj5wc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.128143, 0.404046, -0.854349)
 dialog_key = "paper"
+has_key = true
 
-[node name="CollisionShape3D" parent="Dialogue Areas/Doctors Desk" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22347, 0, 0.553081)
-shape = SubResource("CylinderShape3D_eaigo")
+[node name="CollisionShape3D" parent="Dialogue Areas/DoctorsDeskDia" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.142639, 0, 0.685486)
+shape = SubResource("BoxShape3D_towo3")
 
-[node name="Mabels Interaction" parent="Dialogue Areas" instance=ExtResource("13_sj5wc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.6796, 0.172852, -6.35028)
+[node name="TestDialog" parent="Dialogue Areas" instance=ExtResource("13_sj5wc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52775, 0.404046, -7.63889)
+dialog_key = "mabelcrenshaw"
+
+[node name="CollisionShape3D" parent="Dialogue Areas/TestDialog" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.142639, 0, 0.685486)
+shape = SubResource("BoxShape3D_towo3")
+
+[node name="MabelConvo" parent="Dialogue Areas" node_paths=PackedStringArray("camera") instance=ExtResource("11_v6oj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.4571, -0.692673, -4.81092)
+camera = NodePath("../../Camera3D")
 dialog_key = "Interaction1"
-has_key = true
 
-[node name="CollisionShape3D" parent="Dialogue Areas/Mabels Interaction" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22347, 0, 0.553081)
-shape = SubResource("CylinderShape3D_eaigo")
+[node name="CollisionShape3D" parent="Dialogue Areas/MabelConvo" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0982018, 0, -1.74722)
+shape = SubResource("CylinderShape3D_j3onq")
 
-[node name="Arnolds Interaction" parent="Dialogue Areas" instance=ExtResource("13_sj5wc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3587, 0.172852, 52.4895)
-dialog_key = "Interaction2"
-has_key = true
+[node name="Engineer" parent="." instance=ExtResource("12_uylaq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.938095, -0.699999, 5.76794)
 
-[node name="CollisionShape3D" parent="Dialogue Areas/Arnolds Interaction" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22347, 0, 0.553081)
-shape = SubResource("CylinderShape3D_eaigo")
+[node name="Skeleton3D" parent="Engineer/Rig" index="0"]
+bones/0/position = Vector3(0, 1.56937e-05, 0)
+bones/1/position = Vector3(2.11608e-20, 0.368755, 5.04512e-27)
+bones/1/rotation = Quaternion(0.000436218, 0.042975, -1.87613e-05, 0.999076)
+bones/2/rotation = Quaternion(0.000480663, -6.88991e-05, 5.42247e-06, 1)
+bones/3/rotation = Quaternion(0.000178594, -1.12551e-06, -5.80931e-06, 1)
+bones/4/position = Vector3(0.211946, 0.134061, -0.000191411)
+bones/4/rotation = Quaternion(-0.552384, -0.0569134, -0.637178, 0.53445)
+bones/5/rotation = Quaternion(4.22632e-08, -7.12735e-08, -0.515991, 0.856594)
+bones/7/rotation = Quaternion(-0.319798, -0.339676, 0.148305, 0.871983)
+bones/8/rotation = Quaternion(0.000812283, 0.0012763, -0.702614, 0.71157)
+bones/9/position = Vector3(-0.21196, 0.134068, -0.000195031)
+bones/9/rotation = Quaternion(-0.610681, 0.0774147, 0.612991, 0.495296)
+bones/10/rotation = Quaternion(2.33835e-08, 5.09663e-08, 0.538284, 0.842764)
+bones/12/rotation = Quaternion(-0.318771, 0.315926, -0.230292, 0.863447)
+bones/13/rotation = Quaternion(0.00303336, 0.00362378, 0.703057, 0.711117)
+bones/16/rotation = Quaternion(-0.0005536, -0.0310097, -2.94859e-05, 0.999519)
+bones/19/position = Vector3(0.170945, 0.113587, -0.000330548)
+bones/19/rotation = Quaternion(0.989493, 0.0834069, 0.0785266, 0.0882054)
+bones/20/rotation = Quaternion(0.399351, 6.18556e-08, -2.70417e-07, 0.916798)
+bones/21/rotation = Quaternion(-0.623288, -0.199895, 0.0767787, 0.752103)
+bones/22/rotation = Quaternion(-2.23364e-06, 0.920155, -0.391555, 5.8855e-07)
+bones/23/position = Vector3(-0.170945, 0.113587, 0.00033058)
+bones/23/rotation = Quaternion(0.991019, -0.0333886, 0.0295603, 0.126063)
+bones/24/rotation = Quaternion(0.443549, -5.82566e-08, 3.09943e-07, 0.89625)
+bones/25/rotation = Quaternion(-0.648752, 0.111966, -0.0234581, 0.752352)
+bones/26/rotation = Quaternion(-8.89704e-05, 0.920221, -0.391399, 2.02056e-05)
+bones/27/position = Vector3(0.170945, 0.292703, 0.576205)
+bones/28/position = Vector3(0.20205, 0.0258302, 0.203792)
+bones/28/rotation = Quaternion(-0.70584, -7.06378e-08, -7.0419e-08, 0.708371)
+bones/34/position = Vector3(-0.170945, 0.292703, 0.576205)
+bones/35/position = Vector3(-0.170945, 0.0260852, 0.246455)
+bones/35/rotation = Quaternion(-0.706653, -7.06032e-08, -7.04537e-08, 0.70756)
+bones/42/position = Vector3(0.520808, 0.773764, -0.0566708)
+bones/42/rotation = Quaternion(0.795663, 0.002188, 0.605735, 0.000367038)
+bones/44/position = Vector3(-0.510854, 0.773764, 0.0602061)
+bones/44/rotation = Quaternion(0.759492, -0.00202778, -0.650514, 0.000356346)
 
-[node name="Justice Interaction" parent="Dialogue Areas" instance=ExtResource("13_sj5wc")]
-transform = Transform3D(1.13464, 0, 0, 0, 1, 0, 0, 0, 1.2674, -1.99412, 0.110335, -58.8071)
-dialog_key = "Interaction3"
+[node name="Engineer_Shotgun" parent="Engineer/Rig/Skeleton3D" index="0"]
+transform = Transform3D(0.986866, -0.161535, -0.000626248, -0.00176601, -0.00691085, -0.999974, 0.161526, 0.986842, -0.00710576, -0.49093, 0.627122, 0.108432)
 
-[node name="CollisionShape3D" parent="Dialogue Areas/Justice Interaction" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22347, 0, 0.553081)
-shape = SubResource("CylinderShape3D_eaigo")
+[node name="Engineer_Wrench" parent="Engineer/Rig/Skeleton3D" index="1"]
+transform = Transform3D(0.000626254, -0.161534, 0.986866, 0.999974, -0.00691071, -0.00176599, 0.00710561, 0.986842, 0.161526, -0.504603, 0.626537, 0.191965)
 
-[node name="Arnold" parent="Dialogue Areas" instance=ExtResource("12_hfdr0")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 6.7409, -0.692674, 52.2624)
+[node name="Engineer_Goggles" parent="Engineer/Rig/Skeleton3D" index="2"]
+transform = Transform3D(0.999717, 0.000187073, 0.023805, -0.000161433, 0.999999, -0.00107899, -0.0238052, 0.00107484, 0.999716, 0.00011537, 1.17898, 0.00141207)
+
+[node name="Engineer_Backpack" parent="Engineer/Rig/Skeleton3D" index="3"]
+transform = Transform3D(0.996318, 0.000188858, 0.0857311, -9.59662e-07, 0.999998, -0.00219176, -0.0857313, 0.00218361, 0.996316, 8.49082e-05, 1.17898, 0.00138636)
 
 [node name="Hud" parent="." node_paths=PackedStringArray("player") instance=ExtResource("15_dl26h")]
-player = NodePath("../Engineer2")
+player = NodePath("../Engineer")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.516533, 0, 0.856267, 0, 1, 0, -0.856267, 0, -0.516533, -56.011, 1.054, -6.919)
 
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Spider3" parent="Enemies" instance=ExtResource("10_oo8hh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4759, -0.661511, 29.0746)
-payer_path = NodePath("../../Engineer2")
+payer_path = NodePath("../../Engineer")
 
 [node name="Spider2" parent="Enemies" instance=ExtResource("10_oo8hh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.2473, -0.661511, 20.7473)
-payer_path = NodePath("../../Engineer2")
+payer_path = NodePath("../../Engineer")
 
 [node name="npcs" type="Node" parent="."]
 
@@ -2179,35 +2213,6 @@ script = ExtResource("19_khadt")
 transform = Transform3D(0.124151, 0, 0, 0, 0.0989844, 0, 0, 0, 1.54475, -0.358404, -2.19056e-08, 1.10738)
 mesh = SubResource("SphereMesh_2nc3i")
 
-[node name="Area3D" type="StaticBody3D" parent="Door"]
-transform = Transform3D(4.58466, 0, 0, 0, 0.257531, 0, 0, 0, 1, 4.8641, 0, -64.985)
-collision_layer = 255
-collision_mask = 255
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/Area3D"]
-transform = Transform3D(1.01352, 0, 1.16415e-10, 0, 1, 0, -7.15256e-07, 0, 2.86085, -1.0605, -0.3307, 65.0014)
-shape = SubResource("BoxShape3D_onuam")
-
-[node name="Engineer2" parent="." instance=ExtResource("12_uylaq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55499, -0.7, -56.5858)
-
-[node name="wall6" parent="." instance=ExtResource("2_kvnpu")]
-transform = Transform3D(0.776748, 0, -7.96543e-13, 0, 4.78408, 0, -8.93527e-15, 0, 8.18752, 8.84426, 6.47023, -20.3919)
-
-[node name="Area3D" type="StaticBody3D" parent="wall6"]
-collision_layer = 255
-collision_mask = 255
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall6/Area3D"]
-transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, -2.11758e-22, 0, 0.999969, -0.0315704, 0.489749, -0.00178862)
-shape = SubResource("BoxShape3D_onuam")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("19_u7213")
-volume_db = -14.991
-autoplay = true
-
 [editable path="NavigationRegion3D/OfficeHub/wall9"]
 [editable path="NavigationRegion3D/OfficeMabel/wall9"]
 [editable path="NavigationRegion3D/ArnoldOffice/wall9"]
@@ -2222,10 +2227,10 @@ autoplay = true
 [editable path="Dialogue Areas/misc/BookShelf2"]
 [editable path="Dialogue Areas/misc/DeadEnd"]
 [editable path="Dialogue Areas/misc/WaterCooler"]
-[editable path="Dialogue Areas/Doctors Desk"]
-[editable path="Dialogue Areas/Mabels Interaction"]
-[editable path="Dialogue Areas/Arnolds Interaction"]
-[editable path="Dialogue Areas/Justice Interaction"]
+[editable path="Dialogue Areas/DoctorsDeskDia"]
+[editable path="Dialogue Areas/TestDialog"]
+[editable path="Dialogue Areas/MabelConvo"]
+[editable path="Engineer"]
 [editable path="npcs/MabelCrenshaw"]
 [editable path="npcs/HaroldFinch"]
 [editable path="npcs/HaroldFinch2"]

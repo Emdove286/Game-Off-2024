@@ -11,7 +11,7 @@ var in_progress: bool = false
 func _ready():
 	scene_text = load_scene_text()
 	SignalBus.connect("display_dialog",  Callable(self, "on_display_dialog"))
-	SignalBus.connect("display_dialog",  Callable(self, "on_display_dialog"))
+	#SignalBus.connect("display_dialog",  Callable(self, "on_display_dialog"))
 	
 func load_scene_text():
 	if FileAccess.file_exists(scene_text_file):

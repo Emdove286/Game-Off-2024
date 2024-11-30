@@ -1,7 +1,10 @@
 {
 	"paper": [
-		"This is the test World",
-		"I am testing the Dialog thingy"
+		"The doctor sites lifeless in the spot he died",
+		"He does not look dead yet but its only a matter of time",
+		"When I entered his brain, the wound was still fresh. The brain mostly dead and unrecoverable",
+		"There must have been just enough alive to allow me to get in here.",
+		"The clock is ticking, I better hurry"
 	],
 	"lamp": [
 		"What a nice lamp",
@@ -9,6 +12,15 @@
 	],
 	"bookcase": [
 		"hmmm, there is a book here called \"101 your mom jokes\" by Sigmund Freud "
+	],
+	"deadend": [
+		"Looks like this is a dead end"
+	],
+	"watercooler": [
+		"Looks like this is a dead end",
+		"but atleast there is a water cooler here, I am parched",
+		"...",
+		"I am not entirely sure this is water"
 	],
 	"Interaction1": [
 		"Detective Thorne: Hello? I’m… looking for someone. I don’t know if you can help me, but I need information about Dr. Finch. Who are you?",
@@ -81,8 +93,7 @@
 		"Detective Thorne: I’m going to take care of this. You just keep seeing the good in people, alright? But maybe… be a little more careful next time.",
 		"Arnold: Yeah, I’ll try. I just… I hope Captain Justice isn’t gone forever. He made the world feel a little brighter, you know?"
 	],
-	
-	"Interation3": [
+	"Interaction3": [
 		"Darryl: Evening, Dr. Finch. I’m Officer Darryl Hayes. Hope I’m not interrupting you.",
 		"Darryl: I’m here on official business, thought I’d ask for your input on a case we’re working on. Mind if I come in?",
 		"Dr. Finch: Not at all, Officer Hayes. Please, take a seat. I wasn’t expecting a visit from the police tonight. How can I assist you?",

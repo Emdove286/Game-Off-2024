@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dy4txdcxfwst0"]
+[gd_scene load_steps=19 format=4 uid="uid://dy4txdcxfwst0"]
 
 [ext_resource type="Script" path="res://Scripts/spider.gd" id="2_bysht"]
 
@@ -1762,6 +1762,9 @@ bind/33/pose = Transform3D(0.527953, -0.0388915, 0.848382, -0.283114, 0.933751, 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_1scjc"]
 radius = 22.8112
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_e7gch"]
+radius = 1.54513
+
 [node name="Spider2" type="CharacterBody3D"]
 collision_mask = 6
 script = ExtResource("2_bysht")
@@ -2044,9 +2047,23 @@ collision_mask = 256
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("CylinderShape3D_1scjc")
 
+[node name="hitBox" type="Area3D" parent="."]
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.695989, 0)
+shape = SubResource("SphereShape3D_e7gch")
+
+[node name="knockback" type="Timer" parent="."]
+wait_time = 0.438
+one_shot = true
+
 [connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_shape_entered" from="Area3D" to="." method="_on_area_3d_area_shape_entered"]
 [connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
 [connection signal="area_entered" from="Activator" to="." method="_on_activator_area_entered"]
 [connection signal="area_exited" from="Activator" to="." method="_on_activator_area_exited"]
+[connection signal="area_entered" from="hitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_exited" from="hitBox" to="." method="_on_hit_box_area_exited"]
