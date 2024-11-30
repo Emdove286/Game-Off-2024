@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r5auac3uwu06"
-path="res://.godot/imported/CoverRed.png-a627f54e6cc6b3913908addbe0cb06bd.ctex"
+uid="uid://ct6mold4c0od0"
+path.s3tc="res://.godot/imported/CoverRed.png-a627f54e6cc6b3913908addbe0cb06bd.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Environment/Books/CoverRed.png"
-dest_files=["res://.godot/imported/CoverRed.png-a627f54e6cc6b3913908addbe0cb06bd.ctex"]
+dest_files=["res://.godot/imported/CoverRed.png-a627f54e6cc6b3913908addbe0cb06bd.s3tc.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
