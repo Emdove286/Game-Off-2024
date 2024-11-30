@@ -2,11 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://cxllg8r22jvvt" path="res://Assets/Environment/Desk/Desk.blend" id="1_qbmm0"]
 [ext_resource type="PackedScene" uid="uid://blgres2ftg3qx" path="res://Assets/Environment/Papers/PaperPile.blend" id="2_iw5iu"]
-[ext_resource type="PackedScene" uid="uid://b1kb4e3645rsj" path="res://Assets/Environment/Eyejar/EyeJar.blend" id="3_lynld"]
 [ext_resource type="PackedScene" uid="uid://chu2gmii2u5t3" path="res://Assets/Environment/Papers/LoosePage.blend" id="4_uerre"]
+[ext_resource type="PackedScene" uid="uid://dd2ff6c6gf5w7" path="res://Assets/Environment/Eyejar/EyeJar.tscn" id="5_fk0rn"]
 [ext_resource type="PackedScene" uid="uid://co112rga3emxq" path="res://Assets/Environment/BankersLamp/BankersLamp.blend" id="5_mic4w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q2n22"]
+size = Vector3(2.77887, 1.14886, 1.44287)
 
 [node name="Desk" type="Node3D"]
 
@@ -16,18 +17,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353855, 1, -0.581892)
 [node name="PaperPile2" parent="." instance=ExtResource("2_iw5iu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27004, 1.04607, -0.678904)
 
-[node name="EyeJar" parent="." instance=ExtResource("3_lynld")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825708, 1.03942, -0.894624)
-
 [node name="LoosePage" parent="." instance=ExtResource("4_uerre")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302975, 1.04858, 0.0284725)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(2.80018, 0, 0, 0, 1, 0, 0, 0, 1.43502, -0.35873, 0.604046, -0.414131)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35873, 0.604046, -0.414131)
 collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00717163, -0.136078, -0.0129395)
 shape = SubResource("BoxShape3D_q2n22")
 
 [node name="BankersLamp" parent="." instance=ExtResource("5_mic4w")]
@@ -35,3 +34,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.306
 
 [node name="SpotLight3D" type="SpotLight3D" parent="BankersLamp"]
 transform = Transform3D(0.707107, -1.28028e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, -3.09086e-08, -1, -1.28028e-08, 0.116274, 0.292515, 0)
+
+[node name="EyeJar2" parent="." instance=ExtResource("5_fk0rn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.871052, 1.04298, -0.990107)
