@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://clmmygerjwmd6"]
+
+[ext_resource type="Shader" path="res://Assets/Environment/Eyejar/GlassMatShader.gdshader" id="1_62xqf"]
+[ext_resource type="Texture2D" uid="uid://bs0ncwym4bfw6" path="res://Assets/Environment/Eyejar/GlassSheen.png" id="2_tvfmk"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_62xqf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/metalness = 0.0
+shader_parameter/emission = Color(1, 1, 1, 1)
+shader_parameter/lighting_power = 1.0
+shader_parameter/reflected_map_power = 0.35
+shader_parameter/reflected_map = ExtResource("2_tvfmk")

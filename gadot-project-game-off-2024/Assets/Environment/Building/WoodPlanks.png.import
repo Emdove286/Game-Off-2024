@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm1rxjd0mo66w"
-path="res://.godot/imported/JarLid.png-60f6208b127ed00c0bd345613b685864.ctex"
+uid="uid://h013xk7ltv6s"
+path="res://.godot/imported/WoodPlanks.png-3ec4a57f3f381bbeb0e4658d7cd64786.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/Eyejar/JarLid.png"
-dest_files=["res://.godot/imported/JarLid.png-60f6208b127ed00c0bd345613b685864.ctex"]
+source_file="res://Assets/Environment/Building/WoodPlanks.png"
+dest_files=["res://.godot/imported/WoodPlanks.png-3ec4a57f3f381bbeb0e4658d7cd64786.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
