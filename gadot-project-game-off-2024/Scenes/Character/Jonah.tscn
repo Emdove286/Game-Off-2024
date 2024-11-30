@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://0f8biqtrauoa"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="2_0rlni"]
+[ext_resource type="PackedScene" uid="uid://042x7kg81nir" path="res://Assets/Characters/Jonah Thorne/JonahThorne.blend" id="2_1mjv3"]
+[ext_resource type="PackedScene" uid="uid://byiestr6djdcd" path="res://Scenes/Character/projectile_launcher.tscn" id="3_g0n3k"]
+[ext_resource type="PackedScene" uid="uid://mhmcaq82kewy" path="res://Scenes/UI/Notify.tscn" id="4_vjjqw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8wqq0"]
+radius = 0.381785
+height = 1.53799
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dfu24"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tlv21"]
+radius = 0.561235
+height = 2.68522
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 6
+script = ExtResource("2_0rlni")
+
+[node name="JonahThorne" parent="." instance=ExtResource("2_1mjv3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="ProjectileLauncher" parent="." instance=ExtResource("3_g0n3k")]
+transform = Transform3D(-0.98698, 0.160841, 0.000108027, -0.00118679, -0.00660915, -0.999977, -0.160837, -0.986958, 0.00671423, 0.49082, 0.627876, -0.108341)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.28935, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.17318, 0)
+shape = SubResource("CapsuleShape3D_8wqq0")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+spring_length = 5.0
+margin = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+
+[node name="InteractionArea" type="Area3D" parent="."]
+transform = Transform3D(1.47948, 0, 0, 0, 1.47948, 0, 0, 0, 1.47948, 0, 1.13967, -0.815133)
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+shape = SubResource("CapsuleShape3D_dfu24")
+
+[node name="Notify" parent="." instance=ExtResource("4_vjjqw")]
+transform = Transform3D(0.240033, 0, 0, 0, 0.240033, 0, 0, 0, 0.240033, -0.0199392, 2.90531, -0.167964)
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0859785, 0.969336, -0.119286)
+shape = SubResource("CapsuleShape3D_tlv21")
+
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_area_exited"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

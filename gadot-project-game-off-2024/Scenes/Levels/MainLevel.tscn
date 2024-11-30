@@ -2181,6 +2181,8 @@ bones/39/rotation = Quaternion(-1.00853, 0.075475, 0.017475, 0.985475)
 bones/40/rotation = Quaternion(-1.49653, 0.015475, -0.055525, 0.967475)
 bones/41/rotation = Quaternion(-1.07653, -0.139525, 0.041475, 0.991475)
 bones/42/rotation = Quaternion(-0.896525, 0.000474975, 0.00247497, 0.967475)
+bones/60/position = Vector3(0.000474975, 0.534475, 1.40348)
+bones/60/rotation = Quaternion(-0.039525, 0.000474975, -0.000525026, 1.00048)
 
 [node name="Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.04291, 0, 0.00561482, 0, 2.72098, 0, -0.07134, 0, 0.160788, -0.204098, 0.728795, -8.81318)
