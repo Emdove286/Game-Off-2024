@@ -2201,7 +2201,7 @@ transform = Transform3D(1.01352, 0, 1.16415e-10, 0, 1, 0, -7.15256e-07, 0, 2.860
 shape = SubResource("BoxShape3D_onuam")
 
 [node name="Engineer2" parent="." instance=ExtResource("12_uylaq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9561, -0.700001, -2.35094)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69636, -0.700001, 3.6009)
 
 [node name="wall6" parent="." instance=ExtResource("2_kvnpu")]
 transform = Transform3D(0.776748, 0, -7.96543e-13, 0, 4.78408, 0, -8.93527e-15, 0, 8.18752, 8.84426, 6.47023, -20.3919)
@@ -2257,8 +2257,29 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 47.101
 payer_path = NodePath("../../Engineer2")
 
 [node name="Rat9" parent="Rats" instance=ExtResource("22_1oge5")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 50.0151, -0.696871, -1.29811)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 56.0667, -0.696871, -1.29811)
 payer_path = NodePath("../../Engineer2")
+
+[node name="Rat10" parent="Rats" instance=ExtResource("22_1oge5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.3886, -0.349496, 18.0889)
+payer_path = NodePath("../../Engineer2")
+
+[node name="Activator" parent="Rats/Rat10" index="5"]
+transform = Transform3D(0.18252, 0, 0, 0, 1, 0, 0, 0, 0.179071, 0, 0, 0)
+
+[node name="Rat11" parent="Rats" instance=ExtResource("22_1oge5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -33.8909, -0.349496, 18.2435)
+payer_path = NodePath("../../Engineer2")
+
+[node name="Activator" parent="Rats/Rat11" index="5"]
+transform = Transform3D(0.18252, 0, 0, 0, 1, 0, 0, 0, 0.179071, 0, 0, 0)
+
+[node name="Rat12" parent="Rats" instance=ExtResource("22_1oge5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.4186, -0.349496, 22.5371)
+payer_path = NodePath("../../Engineer2")
+
+[node name="Activator" parent="Rats/Rat12" index="5"]
+transform = Transform3D(0.18252, 0, 0, 0, 1, 0, 0, 0, 0.179071, 0, 0, 0)
 
 [editable path="NavigationRegion3D/OfficeHub/wall9"]
 [editable path="NavigationRegion3D/OfficeMabel/wall9"]
@@ -2284,3 +2305,7 @@ payer_path = NodePath("../../Engineer2")
 [editable path="npcs/Arnold"]
 [editable path="CaptainJustice"]
 [editable path="Rat"]
+[editable path="Rats/Rat9"]
+[editable path="Rats/Rat10"]
+[editable path="Rats/Rat11"]
+[editable path="Rats/Rat12"]
