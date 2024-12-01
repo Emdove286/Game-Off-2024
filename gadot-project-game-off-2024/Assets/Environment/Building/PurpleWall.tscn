@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cipeg2s5mt0y8"]
+
+[ext_resource type="PackedScene" uid="uid://c71auee4hky6f" path="res://Assets/Environment/Building/PurpleWall.blend" id="1_l4kkx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lhqd0"]
+size = Vector3(0.202148, 2.60925, 2.00397)
+
+[node name="wall2" type="Node3D"]
+
+[node name="PurpleWall" parent="." instance=ExtResource("1_l4kkx")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PurpleWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PurpleWall/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101074, 1.30511, 0.00106812)
+shape = SubResource("BoxShape3D_lhqd0")

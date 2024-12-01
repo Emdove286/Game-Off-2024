@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4ag3qfkxs3to"]
+
+[ext_resource type="Script" path="res://Scenes/UI/menu_overlay.gd" id="1_wbstn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t8blf"]
+font_size = 50
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_wbstn")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Jonah Thorne: Psychic Detective"
+label_settings = SubResource("LabelSettings_t8blf")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = -66.5
+offset_right = 103.5
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

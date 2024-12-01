@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjftq47g0i8wt"]
+
+[ext_resource type="PackedScene" uid="uid://bdubwsq23ama6" path="res://Assets/Environment/Building/YellowWall.blend" id="1_etscu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lhqd0"]
+size = Vector3(0.202148, 2.60925, 2.00397)
+
+[node name="wall2" type="Node3D"]
+
+[node name="YellowWall" parent="." instance=ExtResource("1_etscu")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="YellowWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="YellowWall/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101074, 1.30511, 0.00106812)
+shape = SubResource("BoxShape3D_lhqd0")

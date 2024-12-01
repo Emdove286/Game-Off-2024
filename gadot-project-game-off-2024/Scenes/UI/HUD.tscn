@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://5haly2mkreqt"]
+
+[ext_resource type="Script" path="res://Scenes/UI/health.gd" id="1_3cdvy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1w4xw"]
+font_size = 30
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_3cdvy")
+
+[node name="Health" type="Label" parent="."]
+offset_right = 1.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_1w4xw")
+horizontal_alignment = 1

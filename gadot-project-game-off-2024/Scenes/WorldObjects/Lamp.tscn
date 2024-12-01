@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dny4nay1ixagg"]
+
+[ext_resource type="PackedScene" uid="uid://uk7422qyerym" path="res://Assets/Environment/StandingLamp/StandingLamp.blend" id="1_wakx6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3jv5"]
+
+[node name="Lamp" type="Node3D"]
+
+[node name="StandingLamp2" parent="." instance=ExtResource("1_wakx6")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.735508, 0, 0, 0, 0.867451, 0, 0, 0, 0.638479, 0, 0.758765, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CapsuleShape3D_t3jv5")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.949239, 0.31282, 0.0330143, -0.0444233, 0.0294126, 0.99858, 0.311404, -0.949357, 0.0418161, 0, 1.37677, 0)
+light_energy = 3.263
+spot_angle = 60.0

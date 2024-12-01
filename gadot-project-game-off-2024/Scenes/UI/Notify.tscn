@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://mhmcaq82kewy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vixtk"]
+albedo_color = Color(0.794276, 0, 0.0170202, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_3ucxt"]
+material = SubResource("StandardMaterial3D_vixtk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1c10"]
+albedo_color = Color(0.796078, 0, 0.0156863, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vayrc"]
+material = SubResource("StandardMaterial3D_a1c10")
+
+[node name="Notify" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_3ucxt")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.834451, 0, 0, 0, 0.834451, 0, 0, 0, 0.834451, 0, 1.78638, 0)
+mesh = SubResource("CapsuleMesh_vayrc")

@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://da6oq224a18tx"]
+
+[ext_resource type="PackedScene" uid="uid://dl4cq5dunouac" path="res://Assets/Place Holder/wall.glb" id="1_cou35"]
+[ext_resource type="PackedScene" uid="uid://c8177ke6gwgbs" path="res://Scenes/player.tscn" id="1_l66k4"]
+[ext_resource type="PackedScene" uid="uid://dicxijr6k3h84" path="res://Assets/Place Holder/crate.glb" id="3_oacjw"]
+[ext_resource type="PackedScene" uid="uid://oohxsa7jjftm" path="res://Assets/Place Holder/figurine-large.glb" id="4_scugy"]
+[ext_resource type="PackedScene" uid="uid://c2jo1uxp2vmfw" path="res://Assets/Place Holder/flag.glb" id="5_lw683"]
+[ext_resource type="PackedScene" uid="uid://bog88f3jtpw73" path="res://Scenes/spider.tscn" id="6_0ipkn"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ylsoi"]
+vertices = PackedVector3Array(0.25, 0.5, -20.5, 0.75, 0.5, -20.5, 0.75, 0.5, -29.5, -29.5, 0.5, -29.5, 0.5, 0.5, -19, -29.5, 0.5, 29.5, 0.5, 0.5, 29.5, 1, 0.5, -19, 29.5, 0.5, -29.5, 29.5, 0.5, 29.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(0, 4, 3), PackedInt32Array(3, 4, 6), PackedInt32Array(3, 6, 5), PackedInt32Array(1, 2, 7), PackedInt32Array(7, 2, 8), PackedInt32Array(6, 7, 9), PackedInt32Array(9, 7, 8), PackedInt32Array(6, 4, 7)]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k6f64"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r21ar"]
+size = Vector3(60, 2, 60)
+
+[node name="Main" type="Node"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 2, 0)
+shadow_enabled = true
+
+[node name="wall2" parent="." instance=ExtResource("1_cou35")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+
+[node name="Engineer" parent="." instance=ExtResource("1_l66k4")]
+
+[node name="crate2" parent="." instance=ExtResource("3_oacjw")]
+transform = Transform3D(4.61099, 0, 0, 0, 4.61099, 0, 0, 0, 4.61099, -7, 0, 4)
+
+[node name="figurine-large" parent="." instance=ExtResource("4_scugy")]
+transform = Transform3D(5.07781, 0, 0, 0, 5.07781, 0, 0, 0, 5.07781, 14.3083, 0, -5.70796)
+
+[node name="flag2" parent="." instance=ExtResource("5_lw683")]
+transform = Transform3D(6.06302, 0, 0, 0, 6.06302, 0, 0, 0, 6.06302, -18.5993, -0.790007, 8.36282)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_ylsoi")
+
+[node name="Ground" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Ground"]
+shape = SubResource("BoxShape3D_k6f64")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Ground"]
+mesh = SubResource("BoxMesh_r21ar")
+
+[node name="Spider" parent="NavigationRegion3D" instance=ExtResource("6_0ipkn")]
+transform = Transform3D(-0.0430166, 0, -3.31701, 0, 3.31729, 0, 3.31701, 0, -0.0430166, 1.33155, 0, -20.7809)
+payer_path = NodePath("../../Engineer")
+jump_speed = 2.0

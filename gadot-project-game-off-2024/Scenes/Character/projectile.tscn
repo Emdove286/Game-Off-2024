@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj8k6x3tq4h8a"]
+
+[ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_oxh8g"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_pmnib"]
+radius = 0.075
+height = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u7wo3"]
+
+[node name="Projectile" type="RayCast3D"]
+top_level = true
+collision_mask = 0
+script = ExtResource("1_oxh8g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("SphereMesh_pmnib")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.352233, 0, 0, 0, 0.352233, 0, 0, 0, 0.352233, 0, 0, 0)
+shape = SubResource("SphereShape3D_u7wo3")
+
+[connection signal="timeout" from="Timer" to="." method="_cleanup"]

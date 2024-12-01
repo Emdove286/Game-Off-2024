@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhxtg07qxtvca"]
+
+[ext_resource type="Script" path="res://Scripts/dialogue_player.gd" id="1_u6cjx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tq2gs"]
+font_size = 36
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="DialoguePlayer" type="CanvasLayer"]
+script = ExtResource("1_u6cjx")
+
+[node name="TextLabel" type="Label" parent="."]
+process_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -443.0
+offset_top = -135.0
+offset_right = 447.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_tq2gs")
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
