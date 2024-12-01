@@ -13,3 +13,12 @@ offset_right = 1.0
 offset_bottom = 23.0
 label_settings = SubResource("LabelSettings_1w4xw")
 horizontal_alignment = 1
+
+[node name="Keys" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "0 out of 2 keys found"

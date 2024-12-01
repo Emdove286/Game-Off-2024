@@ -4,6 +4,7 @@ var door_closed = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalBus.connect("keyfound",  Callable(self, "key_found"))
+	SignalBus.connect("add_keys",  Callable(self, "add_keys"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,3 +19,4 @@ func _process(delta: float) -> void:
 func key_found():
 	print("key count added")
 	keys = keys + 1
+	SignalBus.emit_signal("add_keys", keys)
