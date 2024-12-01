@@ -1,18 +1,17 @@
-[gd_scene load_steps=24 format=3 uid="uid://dnmbcnkn2sxer"]
+[gd_scene load_steps=23 format=3 uid="uid://dnmbcnkn2sxer"]
 
-[ext_resource type="PackedScene" uid="uid://c8177ke6gwgbs" path="res://Scenes/Character/player.tscn" id="1_3ch38"]
 [ext_resource type="PackedScene" uid="uid://dl4cq5dunouac" path="res://Assets/Place Holder/wall.glb" id="2_65f30"]
 [ext_resource type="NavigationMesh" uid="uid://c2ly6olt25adr" path="res://Scenes/Levels/Test2res.tres" id="2_ki6fk"]
 [ext_resource type="PackedScene" uid="uid://dgpdamp8g5fwk" path="res://Scenes/WorldObjects/BookCaseTunnel.tscn" id="3_2mba5"]
 [ext_resource type="PackedScene" uid="uid://beeisqxutnbd2" path="res://Scenes/WorldObjects/Desk.tscn" id="4_4g4xc"]
 [ext_resource type="PackedScene" uid="uid://kyrr4sxk18mk" path="res://Scenes/WorldObjects/BookCase.tscn" id="5_c2hat"]
 [ext_resource type="PackedScene" uid="uid://dny4nay1ixagg" path="res://Scenes/WorldObjects/Lamp.tscn" id="6_ys3ih"]
-[ext_resource type="PackedScene" uid="uid://dy4txdcxfwst0" path="res://Scenes/Character/spider_2.tscn" id="7_80fr8"]
 [ext_resource type="PackedScene" uid="uid://dhxtg07qxtvca" path="res://Scenes/UI/DialoguePlayer.tscn" id="8_6hcbf"]
 [ext_resource type="PackedScene" uid="uid://dbugksccsjf7a" path="res://Scenes/DialogArea.tscn" id="9_drlti"]
 [ext_resource type="PackedScene" uid="uid://btosalb16kk6" path="res://Scenes/WorldObjects/LoveSeat.tscn" id="10_kvpos"]
 [ext_resource type="PackedScene" uid="uid://dy8jthitetyve" path="res://Scenes/WorldObjects/Desk Chair.tscn" id="11_ti8qq"]
 [ext_resource type="PackedScene" uid="uid://c7xma0sblt0xj" path="res://Scenes/WorldObjects/ArmChair.tscn" id="12_0i1r2"]
+[ext_resource type="PackedScene" uid="uid://chr6qp4uovhq" path="res://Scenes/Character/jonah_thorne.tscn" id="13_7cg88"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k6f64"]
 size = Vector3(60, 2, 60)
@@ -55,11 +54,6 @@ transform = Transform3D(1, 0, 0, 0, 0.193515, 0.981097, 0, -0.981097, 0.193515, 
 light_color = Color(1, 0.772947, 0.995478, 1)
 light_energy = 1.393
 shadow_enabled = true
-
-[node name="Engineer" parent="." instance=ExtResource("1_3ch38")]
-transform = Transform3D(2.05152, 0, 0, 0, 2.05152, 0, 0, 0, 2.05152, 0, 1.6605, 0)
-speed = 20.0
-mouse_sensitivity = 0.015
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = ExtResource("2_ki6fk")
@@ -137,11 +131,6 @@ collision_mask = 255
 transform = Transform3D(1, 0, 3.52429e-12, 0, 1, 0, 0, 0, 0.999969, -0.03157, 0.505725, 0.000581376)
 shape = SubResource("BoxShape3D_qvbji")
 
-[node name="Spider3" parent="." instance=ExtResource("7_80fr8")]
-transform = Transform3D(2.8245, 0, 0, 0, 2.8245, 0, 0, 0, 2.8245, -62.4207, 2.45909, -2.52261)
-payer_path = NodePath("../Engineer")
-speed = 20.0
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(7.86669, 0, 0, 0, 1.6731, 0, 0, 0, 8.76016, 0, 0.0446625, 0)
 mesh = SubResource("PlaneMesh_6k1nb")
@@ -189,6 +178,15 @@ transform = Transform3D(1.1754, 0, 3.04028, 0, 3.25958, 0, -3.04028, 0, 1.1754, 
 
 [node name="Node3D3" parent="." instance=ExtResource("12_0i1r2")]
 transform = Transform3D(-1.52123, 0, -2.38252, 0, 2.82675, 0, 2.38252, 0, -1.52123, 16.8366, 2.69422, -1.14347)
+
+[node name="JonahThorne" parent="." instance=ExtResource("13_7cg88")]
+transform = Transform3D(3.18906, 0, 0, 0, 3.18906, 0, 0, 0, 3.18906, 5.70577, 2.87931, 9.31334)
+speed = 5.0
+acceleration = 4.0
+jump_speed = 8.0
+rotation_speed = 12.0
+mouse_sensitivity = 0.0015
+health = 50
 
 [editable path="DialogArea"]
 [editable path="DialogArea3"]

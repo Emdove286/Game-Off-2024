@@ -13,6 +13,17 @@
 	"bookcase": [
 		"hmmm, there is a book here called \"101 your mom jokes\" by Sigmund Freud "
 	],
+	"bookcase1": [
+		"hmmm, here is a book filled with all his memories of highschool",
+		"*Flips Page* Ohh oh that is embarrasing"
+	],
+	"bookcase2": [
+		"interesting, a book filled with recipes for chili"
+	],
+	"bookcase3": [
+		"oh this book contains all the gossip about his co-workers",
+		"This is very spicy"
+	],
 	"deadend": [
 		"Looks like this is a dead end"
 	],

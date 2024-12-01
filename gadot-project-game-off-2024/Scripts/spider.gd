@@ -80,6 +80,7 @@ func _on_activator_area_exited(area: Area3D) -> void:
 func _on_hit_box_area_entered(area: Area3D) -> void:
 	knockback = true
 	knockbackTime.start()
+	print("KnockBack")
 
 
 func _on_hit_box_area_exited(area: Area3D) -> void:
